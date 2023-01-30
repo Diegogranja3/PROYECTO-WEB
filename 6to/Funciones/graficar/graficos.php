@@ -234,7 +234,7 @@ grecaptcha.enterprise.ready(function() {
 <div id="divid">
  
   <h3 class="display-6">Graficos generados correctamente</h3>
-  <a href="index.html"  class="btn btn-danger">Volver</a>
+  <a href="/6to/index.html"  class="btn btn-danger">Volver</a>
     </div>
 
     <div class="divid1"> <div id="piechart" style="width:700px; height: 500px;"></div></div>
