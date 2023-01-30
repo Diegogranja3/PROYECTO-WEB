@@ -6,6 +6,8 @@ if(empty($_COOKIE['TestCookie1'])){
 }
 ?>
 <!DOCTYPE html>
+<
+<!--aa-->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
