@@ -1,7 +1,6 @@
--- phpMyAdmin SQL Dumptuvieja
--- version 5.2.0ferferfe
--- https://www.phpmyadmin.n
-et/
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
 -- Tiempo de generación: 29-01-2023 a las 14:54:27
