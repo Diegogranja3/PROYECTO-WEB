@@ -1,4 +1,5 @@
 <?php
+///Verificacion de inicio de sesion
 error_reporting(0);
 if(empty($_COOKIE['TestCookie1'])){
     echo '<h1>La cookies expiro o no se inicio sesion<h1>';
@@ -8,6 +9,7 @@ if(empty($_COOKIE['TestCookie1'])){
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!--Carga de fuentes e iconos necesarios!-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -22,32 +24,38 @@ if(empty($_COOKIE['TestCookie1'])){
 <body>
 <script src="https://kit.fontawesome.com/5529d915fb.js" crossorigin="anonymous"></script>
 <?php 
+ ///Conexion a la base de datos
 $servidor= "localhost";
 $usuario= "root";
 $password = "";
 $nombreBD= "sql";
 $conexion = new mysqli($servidor, $usuario, $password, $nombreBD);
+///Comprobacion de conexion
 if ($conexion->connect_error) {
     die("la conexión ha fallado: " . $conexion->connect_error);
 }
 if (!isset($_POST['buscar'])){$_POST['buscar'] = '';}
 ?>
+<!--Creacion de la interfaz!-->
 <div class="container mt-5">
 <div class="col-12">
 <form method="POST" action="Basededatos.php">
 <div class="mb-3">
 <center><h3 class="display-6">Base de datos</h3></center>
 <br>
+<!--Buscador de la base!-->
 <input type="text" class="form-control" id="buscar" name="buscar" placeholder="Dejar en blanco muestra todo">
 <br>
 <center><input type="submit"></center>
 </div>
+<!--Otras funciones del programa!-->
 <center><a href="../Funciones/filtros/filtrofechas.php" class="btn btn-primary">Filtro por fecha</a>
 <a href="../index.html" class="btn btn-danger">Salir</a>
 <a href="../Funciones/ingresar/RegistroRapido.php" class="btn btn-success">Registro rapido</a>
 <a href="../Funciones/graficar/graficasemestre.php" class="btn btn-primary">Graficar fechas grandes</a>
 <center>
 <br>
+<!--Recolectar fecha actual!-->
 <script>
 
 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
@@ -64,11 +72,12 @@ document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.ge
 </form>
 <div class="">
 <div class="">
-<!-- recuerda que si no te funciona con mysql_query tienes que cambiarlo por mysqli_query -->
+<!--Sentencia que usa el buscador para la base!-->
 <?php $busqueda=mysqli_query($conexion,"SELECT * FROM ds WHERE Nombre_completo LIKE LOWER('%".$_POST["buscar"]."%')"); echo "<br>";
 $numero = mysqli_num_rows($busqueda); ?>
 <h5 class="card-tittle">Resultado (<?php echo $numero; ?>)<br> Todas las cantidades son en kilos</h5>
 <table border="1px" class="table table-striped">
+    <!--Creacion de la tabla donde se muestran los datos!-->
   <thead class="thead-dark">
     <tr>
       <th scope="col">ID</th>
@@ -94,7 +103,8 @@ $numero = mysqli_num_rows($busqueda); ?>
   </thead>
   <tbody>
    <tr>
-       <?php while ($resultado = mysqli_fetch_assoc($busqueda)){ ?>
+       <!--Datos provenientes de la base!-->
+       <?php while ($resultado = mysqli_fetch_assoc($busqueda)){ ?> <!--Crea una columna en la tabla por cada registro que haya!-->
    <td><?php echo $resultado["ID"]; ?></td>
       <td><?php echo $resultado["Nombre_completo"]; ?></td>
       <td><?php echo $resultado["Papel_KG"]; ?></td>
@@ -114,6 +124,7 @@ $numero = mysqli_num_rows($busqueda); ?>
       <td><?php echo $resultado["Fecha_entrega"]?></td>
       <td><?php echo $resultado["Semestre"]; ?></td>
       <td>
+          <!--Funciones extra para cada registro en la tabla!-->
       <a href="../Funciones/modificar/modificarporbase.php?id=<?=$resultado['ID']?>"class="btn btn-small btn-warning"  ><i class="fa-solid fa-pen-to-square"></i></a>
         <br>
         <a href="../Funciones/eliminar/eliminar.php?id=<?=$resultado['ID']?>" class="btn btn-small btn-danger" ><i   class="fa-solid fa-trash"></i></a>
