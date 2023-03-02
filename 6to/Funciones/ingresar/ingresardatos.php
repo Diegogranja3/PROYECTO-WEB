@@ -136,7 +136,7 @@ grecaptcha.enterprise.ready(function() {
 });
 </script>
 <center><div class="col-2"><div class="input-group"><input class="btn btn-primary" type="submit" class="btn" name="Continuar" value="Continuar"></div></div></center>
-<center><a href="cerrarsesion.php" class="btn btn-danger">Regresar</a></center>
+<center><a href="../../index.html" class="btn btn-danger">Regresar</a></center>
             </div>    
                     </form>
                 </div>
