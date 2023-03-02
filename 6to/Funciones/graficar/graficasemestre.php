@@ -33,7 +33,7 @@
 </select>
 <br>
             <input class="btn btn-primary" type="submit" class="btn" name="Continuar" value="Continuar">
-            <a href="index.html" class="btn btn-danger">Regresar</a>
+            <a href="../../Base-de-datos/Basededatos.php" class="btn btn-danger">Regresar</a>
             </div>
 
     </form>
