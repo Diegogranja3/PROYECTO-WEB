@@ -21,6 +21,36 @@ if(empty($_COOKIE['TestCookie1'])){
 <link rel="icon" type="image/png" href="images/base.png"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
+<style>
+ body{
+  margin:0;
+	padding-right:200px;
+  zoom: 75%;
+  background-repeat: no-repeat;
+    background-size: cover;
+  background-image:url("https://fondosmil.com/fondo/46052.jpg");
+}
+thead{
+  text-align:center;
+  color:blue;
+}
+table{
+  text-align:center;
+  color:blue;
+}
+tr{
+  text-align:center;
+  color:blue;
+}
+td{
+  text-align:center;
+  color:blue;
+}
+th{
+  text-align:center;
+  color:blue;
+}
+  </style>
 <body>
 <script src="https://kit.fontawesome.com/5529d915fb.js" crossorigin="anonymous"></script>
 <?php 
@@ -37,25 +67,33 @@ if ($conexion->connect_error) {
 if (!isset($_POST['buscar'])){$_POST['buscar'] = '';}
 ?>
 <!--Creacion de la interfaz!-->
+<div 	style="padding-:200px;">
 <div class="container mt-5">
 <div class="col-12">
 <form method="POST" action="Basededatos.php">
 <div class="mb-3">
-<center><h3 class="display-6">Base de datos</h3></center>
+<center><h3 style="padding-left:200px;" class="display-6">Base de datos</h3></center>
 <br>
 <!--Buscador de la base!-->
+<div style="padding-left:200px;">
 <input type="text" class="form-control" id="buscar" name="buscar" placeholder="Dejar en blanco muestra todo">
+
 <br>
 <center><input type="submit"></center>
 </div>
+</div>
+<div style="padding-left:200px;">
 <!--Otras funciones del programa!-->
 <center><a href="../Funciones/filtros/filtrofechas.php" class="btn btn-primary">Filtro por fecha</a>
 <a href="../index.html" class="btn btn-danger">Salir</a>
 <a href="../Funciones/ingresar/RegistroRapido.php" class="btn btn-success">Registro rapido</a>
 <a href="../Funciones/graficar/graficasemestre.php" class="btn btn-primary">Graficar fechas grandes</a>
 <center>
+</div>
 <br>
+</div>
 <!--Recolectar fecha actual!-->
+<div style="padding-left:550px;">
 <script>
 
 var meses = new Array ("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
@@ -67,18 +105,21 @@ var f=new Date();
 document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
 
 </script>
+
 </form>
 <br>
 </form>
-<div class="">
-<div class="">
 <!--Sentencia que usa el buscador para la base!-->
 <?php $busqueda=mysqli_query($conexion,"SELECT * FROM ds WHERE Nombre_completo LIKE LOWER('%".$_POST["buscar"]."%')"); echo "<br>";
 $numero = mysqli_num_rows($busqueda); ?>
-<h5 class="card-tittle">Resultado (<?php echo $numero; ?>)<br> Todas las cantidades son en kilos</h5>
-<table border="1px" class="table table-striped">
+</div>
+<div style="padding-left:600px;">
+<h5 class="card-tittle">Resultado (<?php echo $numero; ?>)</h5>
+</div>
+<table border="1px" class="table table-striped" >
     <!--Creacion de la tabla donde se muestran los datos!-->
-  <thead class="thead-dark">
+    <div>
+    <center><thead class="thead-dark" style="padding:0;">
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Nombre</th>
@@ -100,9 +141,10 @@ $numero = mysqli_num_rows($busqueda); ?>
       <th scope="col">Semestre</th>
       <th scope="col">Opciones</th>
     </tr>
-  </thead>
+  </thead></center>
   <tbody>
    <tr>
+</div>
        <!--Datos provenientes de la base!-->
        <?php while ($resultado = mysqli_fetch_assoc($busqueda)){ ?> <!--Crea una columna en la tabla por cada registro que haya!-->
    <td><?php echo $resultado["ID"]; ?></td>
