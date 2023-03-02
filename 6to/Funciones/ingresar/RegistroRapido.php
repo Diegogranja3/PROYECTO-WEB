@@ -28,8 +28,9 @@
 </head>
 <style>
     body{
-        background: rgb(11,108,17);
-background: linear-gradient(90deg, rgba(11,108,17,1) 0%, rgba(38,159,36,1) 35%, rgba(84,150,87,1) 92%);
+       background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("https://media.discordapp.net/attachments/1068260110415179890/1080292960228352141/932271.jpg?width=788&height=513");
     }
     img{
         max-width: 100%;
