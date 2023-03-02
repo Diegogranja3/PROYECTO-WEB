@@ -114,7 +114,7 @@ $sql=$conexion->query("SELECT*FROM ds WHERE ID=$id");
 
                
 <button type="submit" class="btn btn-primary" name="btnmod" value="ok">Modificar registro</button>
-<a href='../../Base-de-datos/Basededatos.php' class='btn btn-danger'>Regresar</a>
+<a href='../../Funciones/filtros/filtrofechas.php' class='btn btn-danger'>Regresar</a>
 </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </div>
