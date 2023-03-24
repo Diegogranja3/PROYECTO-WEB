@@ -21,7 +21,7 @@ document.getElementById("current_date").innerHTML = month + "/" + day + "/" + ye
 
     <!-- Icons font CSS-->
     <link href="../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <script src="https://kit.fontawesome.com/5529d915fb.js" crossorigin="anonymous"></script>
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
@@ -49,7 +49,7 @@ body{
         <div class="wrapper wrapper--w680">
             <div class="card card-4">
                 <div class="card-body">
-                <h4 class="palao"><i class="fa-solid fa-calendar"></i><script>date = new Date().toLocaleDateString();document.write(date);</script></h4>
+                <h4 class="palao"><i class="fa-solid fa-calendar"></i> <script>date = new Date().toLocaleDateString();document.write(date);</script></h4>
                     <h2 class="title">Inicio de sesión</h2>
                     <form method="POST" id="formulario" name="formulario">
                     <?php
@@ -99,3 +99,4 @@ body{
 
 </html>
 <!-- end document-->
+    
