@@ -8,19 +8,27 @@
 <meta name="Description" content="Enter your description here"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<title>Base de datos</title>
-<link rel="icon" type="image/png" href="images/base.png"/>
+<link rel="icon" type="image/png" href="https://static.vecteezy.com/system/resources/previews/001/187/079/non_2x/chart-png.png"/>
+<title>Graficos Semestrales</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
+<style>
+  body{
+    background-image:url("https://fondosmil.com/fondo/27497.jpg");
+    margin:0;
+	padding:25px;
+  background-repeat: no-repeat;
+    background-size: cover;
+}
+  </style>
 <body>
-  <center><h1>Graficar semestre</h1></center>
+  <center><h1>Graficar por semestre</h1></center>
     <form class="col-4 p-3 m-auto" class="formulario" id="formulario" name="formulario" method="POST">
     <div class="mb-3">
             </div>
-            <input  class="form-check-input" type="radio" name="si" id="si" value="1" checked="true">Enero-Junio</input>
+            <center><input  class="form-check-input" type="radio" name="si" id="si" value="1" checked="true">Enero-Junio</input>
             <input  class="form-check-input" type="radio" name="si" id="si" value="2">Julio-Diciembre</input>
-            <br>
+            <br><br>
             <select class="form-select" aria-label="Default select example" name="anio" id="anio">
               <option>2022</option>
               <option>2023</option>
@@ -34,7 +42,7 @@
 <br>
             <input class="btn btn-primary" type="submit" class="btn" name="Continuar" value="Continuar">
             <a href="../../Base-de-datos/Basededatos.php" class="btn btn-danger">Regresar</a>
-            </div>
+            </div></center>
 
     </form>
 </body>
@@ -102,7 +110,8 @@ while ($resultadorebabas = mysqli_fetch_assoc($rebabaSQL)){ ?>
 <?php $verificar= $resultado['Sumapapel']+$resultadocart['Sumacarton']+$resultadovid['Sumavidrio']+$resultadopet['SumaPET']+$resultadopead['SumaPEAD']+$resultadopebd['SumaPEBD']+$resultadobopp['SumaBOPP']+$resultadoalum['SumaAluminio']+$resultadohojalata['SumaHojalata']+$resultadobat['SumaBaterias']+$resultadomadera['SumaMadera']+$resultadoelect['SumaElectronicos']+$resultadocartuchos['SumaToner']+$resultadorebabas['Sumarebaba'];
 $xd=0;
 ?>
-<h6>Entre <?php echo $fecha_inicio;?> y <?php echo $fecha_final;?> estan los siguientes registros:</h6>
+<br>
+<center><h6>Entre <?php echo $fecha_inicio;?> y <?php echo $fecha_final;?> estan los siguientes registros:</h6></center>
 <table class="table">
 <thead>
     <tr>
@@ -143,7 +152,7 @@ $xd=0;
       <a href="graficossemestrre.php?papel=<?=$resultado['Sumapapel']?>&carton=<?=$resultadocart['Sumacarton']?>&vidrio=<?=$resultadovid['Sumavidrio']?>&pet=<?=$resultadopet['SumaPET']?>&pead=<?=$resultadopead['SumaPEAD']?>&pebd=<?=$resultadopebd['SumaPEBD']?>&bopp=<?=$resultadobopp['SumaBOPP']?>&aluminio=<?=$resultadoalum['SumaAluminio']?>&hojalata=<?=$resultadohojalata['SumaHojalata']?>&baterias=<?=$resultadobat['SumaBaterias']?>&madera=<?=$resultadomadera['SumaMadera']?>&electronicos=<?=$resultadoelect['SumaElectronicos']?>&toner=<?=$resultadocartuchos['SumaToner']?>&rebaba=<?=$resultadorebabas['Sumarebaba']?>" class="btn btn-small btn-danger"><i class="fa-solid fa-arrow-trend-up"></i></a>
         <br>
 </tr>
-      </td> 
+      </td>
       <?php
        }}}}}}}}}}}}}}
         ?>
