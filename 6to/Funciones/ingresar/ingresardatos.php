@@ -38,7 +38,7 @@ if(!$enlace){
 </head>
 <style>
     body{
-        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),url('https://cdn.pixabay.com/photo/2015/06/19/21/24/avenue-815297_960_720.jpg');
+        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),url('../../assets/imgs/datowosfondo.jpg');
         background-repeat: no-repeat;
     background-size: cover;
     }
