@@ -28,7 +28,7 @@ if(empty($_COOKIE['TestCookie1'])){
   zoom: 75%;
   background-repeat: no-repeat;
     background-size: cover;
-  background-image:url("https://fondosmil.com/fondo/46052.jpg");
+  background-image:url("../assets/imgs/basesfondowo.jpg");
 }
 thead{
   text-align:center;
