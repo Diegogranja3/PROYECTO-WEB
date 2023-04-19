@@ -30,7 +30,7 @@
     body{
        background-repeat: no-repeat;
     background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("../../assets/imgs/loginfondowo.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("../../images/loginfondowo.png");
     }
     img{
         max-width: 100%;
