@@ -31,7 +31,7 @@ if(empty($_COOKIE['TestCookie1'])){
 table {
   width: 100%;
   table-layout: auto;
-  font-size: 0.6em;
+  font-size: 1.0em;
   color:blue;
 }
 
@@ -147,15 +147,11 @@ $numero = mysqli_num_rows($busqueda); ?>
       <th>Vidrio</th>
       <th>PET</th>
       <th>PEAD</th>
-      <th>PEBD</th>
-      <th>BOPP</th>
-      <th>Aluminio</th>
-      <th>Hojalata</th>
-      <th>Baterias</th>
-      <th>Madera</th>
       <th>Electronicos</th>
-      <th>Cartuchos de toner</th>
-      <th>Rebaba de hierro</th>
+      <th>Toners</th>
+      <th>Latas</th>
+      <th>Taparroscas</th>
+      <th>Residuos</th>
       <th>Fecha</th>
       <th>Semestre</th>
       <th>Opciones</th>
@@ -173,15 +169,11 @@ $numero = mysqli_num_rows($busqueda); ?>
       <td><?php echo $resultado["Vidrio_KG"]; ?></td>
       <td><?php echo $resultado["PET_KG"]; ?></td>
       <td><?php echo $resultado["PEAD_KG"]; ?></td>
-      <td><?php echo $resultado["PEBD_KG"]; ?></td>
-      <td><?php echo $resultado["BOPP_KG"]; ?></td>
-      <td><?php echo $resultado["Aluminio_KG"]; ?></td>
-      <td><?php echo $resultado["Hojalata_KG"]; ?></td>
-      <td><?php echo $resultado["Baterias_KG"]; ?></td>
-      <td><?php echo $resultado["Madera_KG"]; ?></td>
       <td><?php echo $resultado["Electronicos_KG"]; ?></td>
-      <td><?php echo $resultado["Cartuchos_toner_KG"]; ?></td>
-      <td><?php echo $resultado["Rebaba_hierro_KG"]; ?></td>
+      <td><?php echo $resultado["Cartuchos_toner"]; ?></td>
+      <td><?php echo $resultado["Latas_KG"]; ?></td>
+      <td><?php echo $resultado["Taparroscas_KG"]; ?></td>
+      <td><?php echo $resultado["Residuos_peligrosos_KG"]; ?></td>
       <td><?php echo $resultado["Fecha_entrega"]?></td>
       <td><?php echo $resultado["Semestre"]; ?></td>
       <td>
@@ -190,7 +182,7 @@ $numero = mysqli_num_rows($busqueda); ?>
         <br>
         <a href="../Funciones/eliminar/eliminar.php?id=<?=$resultado['ID']?>" class="btn btn-small btn-danger" ><i   class="fa-solid fa-trash"></i></a>
         <br>
-        <a href="../Funciones/graficar/graficarporbase.php?id=<?=$resultado['ID']?>&nombre=<?=$resultado['Nombre_completo']?>&papel=<?=$resultado['Papel_KG']?>&carton=<?=$resultado['Carton_KG']?>&vidrio=<?=$resultado['Vidrio_KG']?>&pet=<?=$resultado['PET_KG']?>&pead=<?=$resultado['PEAD_KG']?>&pebd=<?=$resultado['PEBD_KG']?>&bopp=<?=$resultado['BOPP_KG']?>&aluminio=<?=$resultado['Aluminio_KG']?>&hojalata=<?=$resultado['Hojalata_KG']?>&baterias=<?=$resultado['Baterias_KG']?>&madera=<?=$resultado['Madera_KG']?>&electronicos=<?=$resultado['Electronicos_KG']?>&cartuchos=<?=$resultado['Cartuchos_toner_KG']?>&rebaba=<?=$resultado['Rebaba_hierro_KG']?>" class="btn btn-small btn-primary"><i class="fa-solid fa-arrow-trend-up"></i></a>
+        <a href="../Funciones/graficar/graficarporbase.php?id=<?=$resultado['ID']?>&nombre=<?=$resultado['Nombre_completo']?>&papel=<?=$resultado['Papel_KG']?>&carton=<?=$resultado['Carton_KG']?>&vidrio=<?=$resultado['Vidrio_KG']?>&pet=<?=$resultado['PET_KG']?>&pead=<?=$resultado['PEAD_KG']?>&electronicos=<?=$resultado['Electronicos_KG']?>&cartuchos=<?=$resultado['Cartuchos_toner']?>&latas=<?=$resultado['Latas_KG']?>&taparroscas=<?=$resultado['Taparroscas_KG']?>&residuos=<?=$resultado['Residuos_peligrosos_KG']?>" class="btn btn-small btn-primary"><i class="fa-solid fa-arrow-trend-up"></i></a>
         <br>
 </tr>
       </td> 
