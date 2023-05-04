@@ -89,39 +89,23 @@ if(!$enlace){
             </div></div>
             <div class="col-2">
                                 <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="PEBD" placeholder="PEBD(KG)">
-            </div></div>
-            <div class="col-2">
-                                <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="BOPP" placeholder="BOPP(KG)">
-            </div></div>
-            <div class="col-2">
-                                <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="ALUM" placeholder="Aluminio(KG)">
-            </div></div>
-            <div class="col-2">
-                                <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="HOJ" placeholder="Hojalata(KG)">
-            </div></div>
-            <div class="col-2">
-                                <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="BAT" placeholder="Baterias(KG)">
-            </div></div>
-            <div class="col-2">
-                                <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="MAD" placeholder="Madera(KG)">
-            </div></div>
-            <div class="col-2">
-                                <div class="input-group">
             <input class="form-control" step="0.01"   required="required" type="number" name="ELEC" placeholder="Electronicos(KG)">
             </div></div>
             <div class="col-2">
                                 <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="TON" placeholder="Cartuchos de toner(KG)">
+            <input class="form-control" step="0.01"   required="required" type="number" name="CTON" placeholder="Cartuchos Toner(Pieza)">
             </div></div>
             <div class="col-2">
                                 <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="REB" placeholder="Rebabas de hierro(KG)">
+            <input class="form-control" step="0.01"   required="required" type="number" name="LAT" placeholder="Latas(KG)">
+            </div></div>
+            <div class="col-2">
+                                <div class="input-group">
+            <input class="form-control" step="0.01"   required="required" type="number" name="TAPA" placeholder="Taparroscas(KG)">
+            </div></div>
+            <div class="col-2">
+                                <div class="input-group">
+            <input class="form-control" step="0.01"   required="required" type="number" name="RESP" placeholder="Residuos Peligrosos(KG)">
             </div></div>
             <p>Semestre correspondiente (verifica que sea acorde a la fecha)</p>
             <div class="col-2"><div class="input-group"><input  class="form-check-input" type="radio" name="si" id="si" value="1" checked="true">Enero-Junio</input></div></div>
@@ -145,4 +129,5 @@ grecaptcha.enterprise.ready(function() {
     </div>
 </body>
 </html>
+
 
