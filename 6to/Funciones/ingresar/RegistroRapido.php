@@ -68,31 +68,19 @@
             <input class="form-control" step="0.01"   required="required" type="number" name="pead" placeholder="PEAD(KG)">
             </div></div>
             <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="pebd" placeholder="PEBD(KG)">
+            <input class="form-control" step="0.01"   required="required" type="number" name="elec" placeholder="Electonicos(KG)">
             </div></div>
             <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="bopp" placeholder="BOPP(KG)">
+            <input class="form-control" step="0.01"   required="required" type="number" name="cton" placeholder="Cartuchos Toner(Pieza)">
             </div></div>
             <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="aluminio" placeholder="Aluminio(KG)">
+            <input class="form-control" step="0.01"   required="required" type="number" name="lat" placeholder="Lata(KG)">
             </div></div>
             <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="hojalata" placeholder="Hojalata(KG)">
+            <input class="form-control" step="0.01"   required="required" type="number" name="tapa" placeholder="Taparroscas(KG)">
             </div></div>
             <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="baterias" placeholder="Baterias(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="madera" placeholder="Madera(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="electronicos" placeholder="Electronicos(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="toner" placeholder="Cartuchos de toner(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="rebaba" placeholder="Rebabas de hierro(KG)">
+            <input class="form-control" step="0.01"   required="required" type="number" name="resp" placeholder="Residuos Peligrosos(KG)">
             </div></div>
             <div class="mb-3">
                 <center><label for="exempleInputEmail1" class="form-label m-auto">Fecha</label></center>
@@ -111,4 +99,5 @@
     </div>
 </body>
 </html>
+
 
