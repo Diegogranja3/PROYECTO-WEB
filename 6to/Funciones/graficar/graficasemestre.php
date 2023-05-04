@@ -68,15 +68,11 @@ $cartSQL=$conexion->query("SELECT sum(Carton_KG) as Sumacarton from ds where Fec
 $vidSQL=$conexion->query("SELECT sum(Vidrio_KG) as Sumavidrio from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
 $petSQL=$conexion->query("SELECT sum(PET_KG) as SumaPET from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
 $peadSQL=$conexion->query("SELECT sum(PEAD_KG) as SumaPEAD from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
-$pebdSQL=$conexion->query("SELECT sum(PEBD_KG) as SumaPEBD from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
-$boppSQL=$conexion->query("SELECT sum(BOPP_KG) as SumaBOPP from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
-$aluminioSQL=$conexion->query("SELECT sum(Aluminio_KG) as SumaAluminio from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
-$hojalataSQL=$conexion->query("SELECT sum(Hojalata_KG) as SumaHojalata from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
-$bateriasSQL=$conexion->query("SELECT sum(Baterias_KG) as SumaBaterias from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
-$maderaSQL=$conexion->query("SELECT sum(Madera_KG) as SumaMadera from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
+$latasSQL=$conexion->query("SELECT sum(Latas_KG) as SumaLatas from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
+$RESQL=$conexion->query("SELECT sum(Residuos_peligrosos_KG) as SumaRes from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
 $electronicosSQL=$conexion->query("SELECT sum(Electronicos_KG) as SumaElectronicos from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
-$cartuchosSQL=$conexion->query("SELECT sum(Cartuchos_toner_KG) as SumaToner from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
-$rebabaSQL=$conexion->query("SELECT sum(Rebaba_hierro_KG) as Sumarebaba from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
+$cartuchosSQL=$conexion->query("SELECT sum(Cartuchos_toner) as SumaToner from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
+$taparroscasSQL=$conexion->query("SELECT sum(Taparroscas_KG) as SumaTapa from ds where Fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");
 ?>
 
 <?php
@@ -90,26 +86,15 @@ while ($resultadopet = mysqli_fetch_assoc($petSQL)){ ?>
 <?php
 while ($resultadopead = mysqli_fetch_assoc($peadSQL)){ ?>
 <?php
-while ($resultadopebd = mysqli_fetch_assoc($pebdSQL)){ ?>
+while ($resultadolatas = mysqli_fetch_assoc($latasSQL)){ ?>
 <?php
-while ($resultadobopp = mysqli_fetch_assoc($boppSQL)){ ?>
-<?php
-while ($resultadoalum = mysqli_fetch_assoc($aluminioSQL)){ ?>
-<?php
-while ($resultadohojalata = mysqli_fetch_assoc($hojalataSQL)){ ?>
-<?php
-while ($resultadobat = mysqli_fetch_assoc($bateriasSQL)){ ?>
-<?php
-while ($resultadomadera = mysqli_fetch_assoc($maderaSQL)){ ?>
+while ($resultadoRES = mysqli_fetch_assoc($RESQL)){ ?>
 <?php
 while ($resultadoelect = mysqli_fetch_assoc($electronicosSQL)){ ?>
 <?php
 while ($resultadocartuchos = mysqli_fetch_assoc($cartuchosSQL)){ ?>
 <?php
-while ($resultadorebabas = mysqli_fetch_assoc($rebabaSQL)){ ?>
-<?php $verificar= $resultado['Sumapapel']+$resultadocart['Sumacarton']+$resultadovid['Sumavidrio']+$resultadopet['SumaPET']+$resultadopead['SumaPEAD']+$resultadopebd['SumaPEBD']+$resultadobopp['SumaBOPP']+$resultadoalum['SumaAluminio']+$resultadohojalata['SumaHojalata']+$resultadobat['SumaBaterias']+$resultadomadera['SumaMadera']+$resultadoelect['SumaElectronicos']+$resultadocartuchos['SumaToner']+$resultadorebabas['Sumarebaba'];
-$xd=0;
-?>
+while ($resultadotapa = mysqli_fetch_assoc($taparroscasSQL)){ ?>
 <br>
 <center><h6>Entre <?php echo $fecha_inicio;?> y <?php echo $fecha_final;?> estan los siguientes registros:</h6></center>
 <table class="table">
@@ -120,15 +105,11 @@ $xd=0;
       <th scope="col">Vidrio</th>
       <th scope="col">PET</th>
       <th scope="col">PEAD</th>
-      <th scope="col">PEBD</th>
-      <th scope="col">BOPP</th>
-      <th scope="col">Aluminio</th>
-      <th scope="col">Hojalata</th>
-      <th scope="col">Baterias</th>
-      <th scope="col">Madera</th>
       <th scope="col">Electronicos</th>
-      <th scope="col">Cartuchos de toner</th>
-      <th scope="col">Rebaba de hierro</th>
+      <th scope="col">Toners</th>
+      <th scope="col">Latas</th>
+      <th scope="col">Taparroscas</th>
+      <th scope="col">Residuos</th>
       <th scope="col">Opciones</th>
     </tr>
   </thead>
@@ -139,20 +120,16 @@ $xd=0;
       <td><?php echo $resultadovid['Sumavidrio'];?></td>
       <td><?php echo $resultadopet['SumaPET'];?></td>
       <td><?php echo $resultadopead['SumaPEAD'];?></td>
-      <td><?php echo $resultadopebd['SumaPEBD'];?></td>
-      <td><?php echo $resultadobopp['SumaBOPP'];?></td>
-      <td><?php echo $resultadoalum['SumaAluminio'];?></td>
-      <td><?php echo $resultadohojalata['SumaHojalata'];?></td>
-      <td><?php echo $resultadobat['SumaBaterias'];?></td>
-      <td><?php echo $resultadomadera['SumaMadera'];?></td>
       <td><?php echo $resultadoelect['SumaElectronicos'];?></td>
       <td><?php echo $resultadocartuchos['SumaToner'];?></td>
-      <td><?php echo $resultadorebabas['Sumarebaba'];?></td>
+      <td><?php echo $resultadolatas['SumaLatas'];?></td>
+      <td><?php echo $resultadotapa['SumaTapa'];?></td>
+      <td><?php echo $resultadoRES['SumaRes'];?></td>
       <td>
       <a href="graficossemestrre.php?papel=<?=$resultado['Sumapapel']?>&carton=<?=$resultadocart['Sumacarton']?>&vidrio=<?=$resultadovid['Sumavidrio']?>&pet=<?=$resultadopet['SumaPET']?>&pead=<?=$resultadopead['SumaPEAD']?>&pebd=<?=$resultadopebd['SumaPEBD']?>&bopp=<?=$resultadobopp['SumaBOPP']?>&aluminio=<?=$resultadoalum['SumaAluminio']?>&hojalata=<?=$resultadohojalata['SumaHojalata']?>&baterias=<?=$resultadobat['SumaBaterias']?>&madera=<?=$resultadomadera['SumaMadera']?>&electronicos=<?=$resultadoelect['SumaElectronicos']?>&toner=<?=$resultadocartuchos['SumaToner']?>&rebaba=<?=$resultadorebabas['Sumarebaba']?>" class="btn btn-small btn-danger"><i class="fa-solid fa-arrow-trend-up"></i></a>
         <br>
 </tr>
       </td>
       <?php
-       }}}}}}}}}}}}}}
+       }}}}}}}}}}
         ?>
