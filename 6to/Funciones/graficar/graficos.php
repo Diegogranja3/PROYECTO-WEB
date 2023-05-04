@@ -18,21 +18,17 @@ $carton=$_POST['CAR'];
 $vidrio=$_POST['VID'];
 $pet=$_POST['PET'];
 $pead=$_POST['PEAD'];
-$pebd=$_POST['PEBD'];
-$bopp=$_POST['BOPP'];
-$aluminio=$_POST['ALUM'];
-$hojalata=$_POST['HOJ'];
-$baterias=$_POST['BAT'];
-$madera=$_POST['MAD'];
 $electronicos=$_POST['ELEC'];
-$toner=$_POST['TON'];
-$rebaba=$_POST['REB'];
+$toner=$_POST['CTON'];
+$latas=$_POST['LAT'];
+$taparosca=$_POST['TAPA'];
+$residuos=$_POST['RESP'];
 date_default_timezone_set('America/Mexico_City');
 $fecha= date('y/m/d');
 $semestre=$sem;
-$TOTALMATERIAL=($papel+$carton+$vidrio+$pet+$pead+$pebd+$bopp+$aluminio+$hojalata+$baterias+$madera+$electronicos+$toner+$rebaba);
+$TOTALMATERIAL=($papel+$carton+$vidrio+$pet+$pead+$electronicos+$toner+$latas+$taparosca+$residuos);
 
-$insertar="INSERT INTO ds(Nombre_completo, Papel_KG, Carton_KG, Vidrio_KG, PET_KG, PEAD_KG, PEBD_KG, BOPP_KG, Aluminio_KG, Hojalata_KG, Baterias_KG, Madera_KG, Electronicos_KG, Cartuchos_toner_KG, Rebaba_hierro_KG, Fecha_entrega, Semestre)VALUES('$nombre','$papel','$carton','$vidrio','$pet','$pead','$pebd','$bopp','$aluminio','$hojalata','$baterias','$madera','$electronicos','$toner','$rebaba','$fecha','$semestre')";
+$insertar="INSERT INTO ds(Nombre_completo, Papel_KG, Carton_KG, Vidrio_KG, PET_KG, PEAD_KG, PEBD_KG, BOPP_KG, Aluminio_KG, Hojalata_KG, Baterias_KG, Madera_KG, Electronicos_KG, Cartuchos_toner, Rebaba_hierro_KG, Fecha_entrega, Semestre)VALUES('$nombre','$papel','$carton','$vidrio','$pet','$pead','$pebd','$bopp','$aluminio','$hojalata','$baterias','$madera','$electronicos','$toner','$rebaba','$fecha','$semestre')";
 
   $ejecutarINSERTAR=mysqli_query($enlace,$insertar);
 
