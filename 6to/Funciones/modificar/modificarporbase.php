@@ -27,7 +27,7 @@ $sql=$conexion->query("SELECT*FROM ds WHERE ID=$id");
 </head>
 <style>
     body{
-        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),url('https://cdn.discordapp.com/attachments/1068260110415179890/1080668816465481758/a.png');
+        background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)),url('../../images/datowosfondo.jpg');
         background-repeat: no-repeat;
         background-size: cover;
     }
