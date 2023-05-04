@@ -15,32 +15,20 @@ if(empty($_POST["pet"])){
 if(empty($_POST["pead"])){
     $_POST["pead"]='0';
 }
-if(empty($_POST["pebd"])){
-    $_POST["pebd"]='0';
+if(empty($_POST["elec"])){
+    $_POST["elec"]='0';
 }
-if(empty($_POST["bopp"])){
-    $_POST["bopp"]='0';
+if(empty($_POST["cton"])){
+    $_POST["cton"]='0';
 }
-if(empty($_POST["aluminio"])){
-    $_POST["aluminio"]='0';
+if(empty($_POST["lat"])){
+    $_POST["lat"]='0';
 }
-if(empty($_POST["hojalata"])){
-    $_POST["hojalata"]='0';
+if(empty($_POST["tapa"])){
+    $_POST["tapa"]='0';
 }
-if(empty($_POST["baterias"])){
-    $_POST["baterias"]='0';
-}
-if(empty($_POST["madera"])){
-    $_POST["madera"]='0';
-}
-if(empty($_POST["electronicos"])){
-    $_POST["electronicos"]='0';
-}
-if(empty($_POST["toner"])){
-    $_POST["toner"]='0';
-}
-if(empty($_POST["rebaba"])){
-    $_POST["rebaba"]='0';
+if(empty($_POST["resp"])){
+    $_POST["resp"]='0';
 }
 if($_POST['si']==1){
     $sem="Enero-Junio";
@@ -55,18 +43,14 @@ if (!empty($_POST["btnregistrar"])){
       $vidrio=$_POST["vidrio"];
       $pet=$_POST["pet"];
       $pead=$_POST["pead"];
-      $pebd=$_POST["pebd"];
-      $bopp=$_POST["bopp"];
-      $aluminio=$_POST["aluminio"];
-      $hojalata=$_POST["hojalata"];
-      $baterias=$_POST["baterias"];
-      $madera=$_POST["madera"];
-      $electronicos=$_POST["electronicos"];
-      $toner=$_POST["toner"];
-      $rebaba=$_POST["rebaba"];
+      $electronicos=$_POST["elec"];
+      $toner=$_POST["cton"];
+      $latas=$_POST["lat"];
+      $taparroscas=$_POST["tapa"];
+      $residuos=$_POST["resp"];
       $fecha=$_POST["fecha"];
       $semestre=$sem;
-$sql=$conexion->query("INSERT INTO ds(Nombre_completo, Papel_KG, Carton_KG, Vidrio_KG, PET_KG, PEAD_KG, PEBD_KG, BOPP_KG, Aluminio_KG, Hojalata_KG, Baterias_KG, Madera_KG, Electronicos_KG, Cartuchos_toner_KG, Rebaba_hierro_KG, Fecha_entrega, Semestre) VALUES ('$nombre','$papel','$carton','$vidrio','$pet','$pead','$pebd','$bopp','$aluminio','$hojalata','$baterias','$madera','$electronicos','$toner','$rebaba','$fecha','$semestre')");
+$sql=$conexion->query("INSERT INTO ds(Nombre_completo, Papel_KG, Carton_KG, Vidrio_KG, PET_KG, PEAD_KG, Electronicos_KG, Cartuchos_toner, Latas, Taparroscas, Residuos_peligrosos, Fecha_entrega, Semestre) VALUES ('$nombre','$papel','$carton','$vidrio','$pet','$pead','$pebd','$bopp','$aluminio','$hojalata','$baterias','$madera','$electronicos','$toner','$rebaba','$fecha','$semestre')");
 if($sql==1){
     echo '<div class="alert alert-success">REGISTRO EXITOSO!!!</div>';
 }else{
