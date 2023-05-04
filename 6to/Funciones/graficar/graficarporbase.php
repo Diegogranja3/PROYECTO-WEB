@@ -1,4 +1,3 @@
-
 <?php
 $enlace=mysqli_connect('localhost','root','','sql');
 
@@ -12,14 +11,12 @@ $carton=$_GET['carton'];
 $vidrio=$_GET['vidrio'];
 $pet=$_GET['pet'];
 $pead=$_GET['pead'];
-$pebd=$_GET['pebd'];
-$bopp=$_GET['bopp'];
-$aluminio=$_GET['aluminio'];
-$hojalata=$_GET['hojalata'];
-$baterias=$_GET['baterias'];
-$madera=$_GET['madera'];
+$toner=$_GET['cartuchos'];
+$latas=$_GET['latas'];
+$taparroscas=$_GET['taparroscas'];
+$residuos=$_GET['residuos'];
 $electronicos=$_GET['electronicos'];
-$TOTALMATERIAL=($papel+$carton+$vidrio+$pet+$pead+$pebd+$bopp+$aluminio+$hojalata+$baterias+$madera+$electronicos);
+$TOTALMATERIAL=($papel+$carton+$vidrio+$pet+$pead+$electronicos+$latas+$taparroscas+$residuos+$toner);
 
 
 
@@ -33,30 +30,18 @@ $cartonARBOL=($carton);
 //CO2
 $petCO2=($pet*1.87);
 $peadCO2=($pead*1.33);
-$pebdCO2=($pebd*1.29);
 $vidrioCO2=($vidrio*0.17);
-$boppCO2=($bopp*1.31);
-$aluminioCO2=($aluminio*6.90);
-$hojalataCO2=($hojalata*1.50);
-$TOTALCO2=($petCO2+$peadCO2+$pebdCO2+$vidrioCO2+$boppCO2+$aluminioCO2+$hojalataCO2);
+$TOTALCO2=($petCO2+$peadCO2+$vidrioCO2);
 
 
 //Electricidad
 
 //agua 3.7
 $peadAGUA=($pead*1.96);
-$boppAGUA=($bopp*1.57);
 $petAGUA=($pet*0);
-$pebdAGUA=($pebd*0);
-//$papelAGUA=($papel*79);
 $cartonAGUA=($carton*50);
 $vidrioAGUA=($vidrio*0);
-$aluminioAGUA=($aluminio*36);
-//$maderaAGUA=($madera*50);
-$hojalataAGUA=($hojalata*0);
-//$bateriasAGUA=($baterias*31185);
-//$electronicosAGUA=($electronicos*48667);
-$TOTALAGUA=($peadAGUA+$petAGUA+$boppAGUA+$pebdAGUA+$cartonAGUA+$vidrioAGUA+$aluminioAGUA+$hojalataAGUA);
+$TOTALAGUA=($peadAGUA+$petAGUA+$cartonAGUA+$vidrioAGUA);
 
 
 
@@ -82,12 +67,10 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$boppAGUA+$pebdAGUA+$cartonAGUA+$vidrioAGUA+$alum
           ['Vidrio', <?php echo($vidrio)?>],
           ['PET', <?php echo($pet)?>],
           ['PEAD', <?php echo($pead)?>],
-          ['PEBD', <?php echo($pebd)?>],
-          ['BOPP', <?php echo($bopp)?>], 
-          ['Aluminio', <?php echo($aluminio)?>], 
-          ['Hojalata', <?php echo($hojalata)?>],
-          ['Baterias', <?php echo($baterias)?>],
-          ['Madera', <?php echo($madera)?>],
+          ['Latas', <?php echo($latas)?>],
+          ['Residuos', <?php echo($residuos)?>], 
+          ['Taparroscas', <?php echo($taparroscas)?>], 
+          ['Toner', <?php echo($toner)?>], 
           ['Electronicos', <?php echo($electronicos)?>]
         ]);
 
