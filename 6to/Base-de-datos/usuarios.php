@@ -31,7 +31,7 @@ if(empty($_COOKIE['TestCookie1'])){
 table {
   width: 100%;
   table-layout: auto;
-  font-size: 0.6em;
+  font-size: 1.0em;
   color:blue;
 }
 
@@ -48,32 +48,13 @@ th {
 
 th,
 td {
-  text-align: center;
   color:blue;
 }
 thead{
   text-align:center;
   color:blue;
 }
-/*table { 
-  table-layout: auto;
-  width: 100%;
-  display : table ; 
-  margin : auto ;
-  color: blue;  
-}
-tr{
-  text-align:center;
-  color:blue;
-}
-td{
-  text-align:center;
-  color:blue;
-}
-th{
-  text-align:center;
-  color:blue;
-}*/
+
   </style>
 <body>
 <script src="https://kit.fontawesome.com/5529d915fb.js" crossorigin="anonymous"></script>
