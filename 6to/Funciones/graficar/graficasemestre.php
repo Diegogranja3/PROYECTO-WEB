@@ -126,7 +126,7 @@ while ($resultadotapa = mysqli_fetch_assoc($taparroscasSQL)){ ?>
       <td><?php echo $resultadotapa['SumaTapa'];?></td>
       <td><?php echo $resultadoRES['SumaRes'];?></td>
       <td>
-      <a href="graficossemestrre.php?papel=<?=$resultado['Sumapapel']?>&carton=<?=$resultadocart['Sumacarton']?>&vidrio=<?=$resultadovid['Sumavidrio']?>&pet=<?=$resultadopet['SumaPET']?>&pead=<?=$resultadopead['SumaPEAD']?>&pebd=<?=$resultadopebd['SumaPEBD']?>&bopp=<?=$resultadobopp['SumaBOPP']?>&aluminio=<?=$resultadoalum['SumaAluminio']?>&hojalata=<?=$resultadohojalata['SumaHojalata']?>&baterias=<?=$resultadobat['SumaBaterias']?>&madera=<?=$resultadomadera['SumaMadera']?>&electronicos=<?=$resultadoelect['SumaElectronicos']?>&toner=<?=$resultadocartuchos['SumaToner']?>&rebaba=<?=$resultadorebabas['Sumarebaba']?>" class="btn btn-small btn-danger"><i class="fa-solid fa-arrow-trend-up"></i></a>
+      <a href="graficossemestrre.php?papel=<?=$resultado['Sumapapel']?>&carton=<?=$resultadocart['Sumacarton']?>&vidrio=<?=$resultadovid['Sumavidrio']?>&pet=<?=$resultadopet['SumaPET']?>&pead=<?=$resultadopead['SumaPEAD']?>&toner=<?=$resultadocartuchos['SumaToner']?>&latas=<?=$resultadolatas['SumaLatas']?>&taparroscas=<?=$resultadotapa['SumaTapa']?>&residuos=<?=$resultadoRES['SumaRes']?>&electronicos=<?=$resultadoelect['SumaElectronicos']?>" class="btn btn-small btn-danger"><i class="fa-solid fa-arrow-trend-up"></i></a>
         <br>
 </tr>
       </td>
