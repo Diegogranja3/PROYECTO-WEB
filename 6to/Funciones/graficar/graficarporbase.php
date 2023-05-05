@@ -25,27 +25,42 @@ $TOTALMATERIAL=($papel+$carton+$vidrio+$pet+$pead+$electronicos+$latas+$taparros
 
 //arboles
 $papelARBOL=($papel*0.017);
-$cartonARBOL=($carton);
+$cartonARBOL=($carton*0.04);
+$TOTALARBOLES=($papelARBOL+$cartonARBOL);
 
 //CO2
-$petCO2=($pet*1.87);
-$peadCO2=($pead*1.33);
-$vidrioCO2=($vidrio*0.17);
-$TOTALCO2=($petCO2+$peadCO2+$vidrioCO2);
+$petCO2=($pet*3.8);
+$peadCO2=($pead*1.8);
+$vidrioCO2=($vidrio*0.3);
+$latasCO2=($latas*0.2);
+$papelCO2=($papel*1.5);
+$cartonCO2=($carton*0.75);
+$taparroscasCO2=($taparroscas*0.2);
+$electronicosCO2=($electronicos*1.8);
+$residuosCO2=($residuos*3.8);
+$TOTALCO2=($petCO2+$peadCO2+$vidrioCO2+$latasCO2+$papelCO2+$cartonCO2+$taparroscasCO2+$electronicosCO2+$residuosCO2);
 
 
 //Electricidad
+$papelElec=($papel*4);
+$cartonElec=($carton*4.3);
+$petElec=($pet*0.55);
+$peadElec=($pead*0.55);
+$taparroscasElec=($taparroscas*0.03);
+$tonerElec=($toner*7.5);
+$latasElec=($latas*0.33);
+$electronicosElec=($electronicos*6.425);
+$TOTALELEC=($papelElec+$cartonElec+$petElec+$peadElec+$taparroscasElec+$tonerElec+$latasElec+$electronicosElec);
 
 //agua 3.7
-$peadAGUA=($pead*1.96);
-$petAGUA=($pet*0);
-$cartonAGUA=($carton*50);
-$vidrioAGUA=($vidrio*0);
-$TOTALAGUA=($peadAGUA+$petAGUA+$cartonAGUA+$vidrioAGUA);
-
-
-
-
+$peadAGUA=($pead*26.5);
+$petAGUA=($pet*26);
+$papelAGUA=($papel*8);
+$cartonAGUA=($carton*4.3);
+$vidrioAGUA=($vidrio*0.15);
+$latasAGUA=($latas*5);
+$taparroscasAGUA=($taparroscas*2.5);
+$TOTALAGUA=($peadAGUA+$petAGUA+$papelAGUA+$cartonAGUA+$vidrioAGUA+$latasAGUA+$taparroscasAGUA);
 
 ?>
 <!DOCTYPE html>
@@ -67,10 +82,10 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$cartonAGUA+$vidrioAGUA);
           ['Vidrio', <?php echo($vidrio)?>],
           ['PET', <?php echo($pet)?>],
           ['PEAD', <?php echo($pead)?>],
+          ['Toner', <?php echo($toner)?>], 
           ['Latas', <?php echo($latas)?>],
           ['Residuos', <?php echo($residuos)?>], 
           ['Taparroscas', <?php echo($taparroscas)?>], 
-          ['Toner', <?php echo($toner)?>], 
           ['Electronicos', <?php echo($electronicos)?>]
         ]);
 
@@ -97,13 +112,13 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$cartonAGUA+$vidrioAGUA);
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ['Dias', 'Dias', { role: 'style' } ],
+        ['Papel', <?php echo $papelAGUA?>, 'color: gray'],
         ['Carton', <?php echo $cartonAGUA?>, 'color: gray'],
+        ['Vidrio', <?php echo $vidrioAGUA?>, 'color: gray'],
         ['PET', <?php echo $petAGUA?>, 'color: gray'],
         ['PEAD', <?php echo $peadAGUA?>, 'color: gray'],
-        ['PEBD', <?php echo $pebdAGUA?>, 'color: gray'],
-        ['BOPP', <?php echo $boppAGUA?>, 'color: gray'],
-        ['Aluminio', <?php echo $aluminioAGUA?>, 'color: gray'],
-        ['Hojalata', <?php echo $hojalata?>, 'color: #76A7FA'],
+        ['Latas', <?php echo $latasAGUA?>, 'color: gray'],
+        ['Taparroscas', <?php echo $taparroscasAGUA?>, 'color: gray'],
         ['TOTAL', <?php echo $TOTALAGUA?>, 'opacity: 0.2']
       ]);
     
@@ -137,12 +152,15 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$cartonAGUA+$vidrioAGUA);
       function drawStuff() {
         var data = new google.visualization.arrayToDataTable([
           ['Materiales', 'KG de CO2'],
+          ["Papel", <?php echo($papelCO2) ?>],
+          ["Carton", <?php echo($cartonCO2) ?>],
           ["Vidrio", <?php echo($vidrioCO2) ?>],
           ["PET", <?php echo($petCO2) ?>],
           ["PEAD", <?php echo($peadCO2) ?>],
-          ["PEBD", <?php echo($pebdCO2) ?>],
-          ["Aluminio", <?php echo($aluminioCO2) ?>],
-          ["Hojalata", <?php echo($hojalataCO2) ?>],
+          ["Latas", <?php echo($latasCO2) ?>],
+          ["Taparroscas", <?php echo($taparroscasCO2) ?>],
+          ["Residuos", <?php echo($residuosCO2) ?>],
+          ["Electronicos", <?php echo($electronicosCO2) ?>],
           ['TOTAL', <?php echo($TOTALCO2) ?>]
         ]);
 
