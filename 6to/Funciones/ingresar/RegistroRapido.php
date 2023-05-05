@@ -71,7 +71,7 @@
             <input class="form-control" step="0.01"   required="required" type="number" name="elec" placeholder="Electonicos(KG)">
             </div></div>
             <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="cton" placeholder="Cartuchos Toner(Pieza)">
+            <input class="form-control" step="0"   required="required" type="number" name="cton" placeholder="Cartuchos Toner(Pieza)">
             </div></div>
             <div class="col-2"><div class="input-group">
             <input class="form-control" step="0.01"   required="required" type="number" name="lat" placeholder="Lata(KG)">
@@ -99,5 +99,3 @@
     </div>
 </body>
 </html>
-
-
