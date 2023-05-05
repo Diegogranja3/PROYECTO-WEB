@@ -50,7 +50,7 @@ if (!empty($_POST["btnregistrar"])){
       $residuos=$_POST["resp"];
       $fecha=$_POST["fecha"];
       $semestre=$sem;
-$sql=$conexion->query("INSERT INTO ds(Nombre_completo, Papel_KG, Carton_KG, Vidrio_KG, PET_KG, PEAD_KG, Electronicos_KG, Cartuchos_toner, Latas, Taparroscas, Residuos_peligrosos, Fecha_entrega, Semestre) VALUES ('$nombre','$papel','$carton','$vidrio','$pet','$pead','$pebd','$bopp','$aluminio','$hojalata','$baterias','$madera','$electronicos','$toner','$rebaba','$fecha','$semestre')");
+$sql=$conexion->query("INSERT INTO ds(Nombre_completo, Papel_KG, Carton_KG, Vidrio_KG, PET_KG, PEAD_KG, Electronicos_KG, Cartuchos_toner, Latas_KG, Taparroscas_KG, Residuos_peligrosos_KG, Fecha_entrega, Semestre) VALUES ('$nombre','$papel','$carton','$vidrio','$pet','$pead','$electronicos','$toner','$latas','$taparroscas','$residuos','$fecha','$semestre')");
 if($sql==1){
     echo '<div class="alert alert-success">REGISTRO EXITOSO!!!</div>';
 }else{
