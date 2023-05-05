@@ -93,7 +93,7 @@ if(!$enlace){
             </div></div>
             <div class="col-2">
                                 <div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="CTON" placeholder="Cartuchos Toner(Pieza)">
+            <input class="form-control" step="0"   required="required" type="number" name="CTON" placeholder="Cartuchos Toner(Pieza)">
             </div></div>
             <div class="col-2">
                                 <div class="input-group">
@@ -129,5 +129,3 @@ grecaptcha.enterprise.ready(function() {
     </div>
 </body>
 </html>
-
-
