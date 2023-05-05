@@ -7,15 +7,13 @@ if (!empty($_POST['btnmod'])){
     $vidrio=$_POST["vidrio"];
     $pet=$_POST["pet"];
     $pead=$_POST["pead"];
-    $pebd=$_POST["pebd"];
-    $bopp=$_POST["bopp"];
-    $aluminio=$_POST["aluminio"];
-    $hojalata=$_POST["hojalata"];
-    $baterias=$_POST["baterias"];
-    $madera=$_POST["madera"];
-    $electronicos=$_POST["electronicos"];
+    $electronicos=$_POST["elec"];
+    $toner=$_POST["cton"];
+    $latas=$_POST["lat"];
+    $tapas=$_POST["tapa"];
+    $residuos=$_POST["resp"];
     $fecha=$_POST["fecha"];
-    $sql=$conexion->query("UPDATE ds SET Nombre_completo='$nombre', Papel_KG='$papel', Carton_KG='$carton', Vidrio_KG='$vidrio', PET_KG='$pet', PEAD_KG='$pead', PEBD_KG='$pebd', BOPP_KG='$bopp', Aluminio_KG='$aluminio', Hojalata_KG='$hojalata', Baterias_KG= '$baterias', Madera_KG='$madera', Fecha_entrega='$fecha' WHERE ID=$id");
+    $sql=$conexion->query("UPDATE ds SET Nombre_completo='$nombre', Papel_KG='$papel', Carton_KG='$carton', Vidrio_KG='$vidrio', PET_KG='$pet', PEAD_KG='$pead', Electronicos_KG='$electronicos', Cartuchos_Toner='$toner', Latas_KG='$latas', Taparroscas_KG='$tapas', Residuos_peligrosos_KG= '$residuos', Fecha_entrega='$fecha' WHERE ID=$id");
  if ($sql==1){
     header("location:../filtros/filtrofechas.php");
 }else{
