@@ -289,24 +289,58 @@ $resultadocartuchostgeneral= $resultadocartuchostEne['CartuchosT_enero']+$result
 $resultadolatasgeneral= $resultadolatasEne['Latas_enero']+$resultadolatasFeb['Latas_febrero']+$resultadolatasMar['Latas_marzo']+$resultadolatasAbr['Latas_abril']+$resultadolatasMay['Latas_mayo']+$resultadolatasJun['Latas_junio']+$resultadolatasJul['Latas_julio']+$resultadolatasAgo['Latas_agosto']+$resultadolatasSep['Latas_septiembre']+$resultadolatasOct['Latas_octubre']+$resultadolatasNov['Latas_noviembre']+$resultadolatasDic['Latas_diciembre'];
 $resultadotaparroscasgeneral= $resultadotaparroscasEne['Taparroscas_enero']+$resultadotaparroscasFeb['Taparroscas_febrero']+$resultadotaparroscasMar['Taparroscas_marzo']+$resultadotaparroscasAbr['Taparroscas_abril']+$resultadotaparroscasMay['Taparroscas_mayo']+$resultadotaparroscasJun['Taparroscas_junio']+$resultadotaparroscasJul['Taparroscas_julio']+$resultadotaparroscasAgo['Taparroscas_agosto']+$resultadotaparroscasSep['Taparroscas_septiembre']+$resultadotaparroscasOct['Taparroscas_octubre']+$resultadotaparroscasNov['Taparroscas_noviembre']+$resultadotaparroscasDic['Taparroscas_diciembre'];
 $resultadoresiduospgeneral= $resultadoresiduospEne['ResiduosP_enero']+$resultadoresiduospFeb['ResiduosP_febrero']+$resultadoresiduospMar['ResiduosP_marzo']+$resultadoresiduospAbr['ResiduosP_abril']+$resultadoresiduospMay['ResiduosP_mayo']+$resultadoresiduospJun['ResiduosP_junio']+$resultadoresiduospJul['ResiduosP_julio']+$resultadoresiduospAgo['ResiduosP_agosto']+$resultadoresiduospSep['ResiduosP_septiembre']+$resultadoresiduospOct['ResiduosP_octubre']+$resultadoresiduospNov['ResiduosP_noviembre']+$resultadoresiduospDic['ResiduosP_diciembre'];
-$resaguapapel=($resultadopapelgeneral*79);
-$resaguacarton=($resultadocartongeneral*50);
-$resaguavidrio=($resultadovidriogeneral*0);
+
+
+//Agua
+$resaguapapel=($resultadopapelgeneral*8);
+$resaguacarton=($resultadocartongeneral*4.3);
+$resaguavidrio=($resultadovidriogeneral*0.15);
+$resaguapet=($resultadopetgeneral*26);
+$resaguapead=($resultadopeadgeneral*26.5);
+$resagualatas=($resultadolatasgeneral*5);
+$resaguatapa=($resultadotaparroscasgeneral*2.5);
+
+//CO2
+$rescopapel=($resultadopapelgeneral*1.5);
+$rescocarton=($resultadocartongeneral*0.75);
+$rescovidrio=($resultadovidriogeneral*0.3);
+$rescopet=($resultadopetgeneral*3.8);
+$rescopead=($resultadopeadgeneral*1.8);
+$rescolatas=($resultadolatasgeneral*0.2);
+$rescotapa=($resultadotaparroscasgeneral*0.2);
+$rescoresiduos=($resultadoresiduospgeneral*3.8);
+$rescoelect=($resultadoelectrogeneral*1.8);
+
+//Energia
+$resenepapel=($resultadopapelgeneral*4);
+$resenecarton=($resultadocartongeneral*4.3);
+$resenevidrio=($resultadovidriogeneral*0.3);
+$resenepet=($resultadopetgeneral*0.55);
+$resenepead=($resultadopeadgeneral*1.8);
+$resenelatas=($resultadolatasgeneral*0.33);
+$resenetapa=($resultadotaparroscasgeneral*0.03);
+$reseneresiduos=($resultadoresiduospgeneral*3.8);
+$reseneelect=($resultadoelectrogeneral*6.5);
+$resenetoner=($resultadocartuchostgeneral*2);
+
 ?>
 <?php
 require('FPDF/fpdf.php');
 $pdf = new FPDF('L', 'mm', 'A4');
 $pdf->AddPage();
-$cellWidth = 20.3;
-$cellHeight = 12;
+$cellWidth = 28.4;
+$cellHeight = 15;
 $numRows = 5;
-$numCols = 14;
+$numCols = 10;
 $data = array(
-    array("Material:", "Papel", "Carton","Vidrio","Madera","Baterias","PEAD","PET","BOPP","","","","",""),
-    array("Cantidad: ", $resultadopapelgeneral, $resultadocartongeneral, $resultadovidriogeneral,"","","","","","","","","",""),
-    array("CO2: ", $resultadopapelgeneral, $resultadocartongeneral, $resultadovidriogeneral,"","","","","","","","","",""),
-    array("Agua: ", $resaguapapel, $resaguacarton, $resaguavidrio,"","","","","","","","","",""),
+    array("Material:", "Papel", "Carton","Vidrio","PET","PEAD","Electronicos","C.Toner","Latas","Taparroscas","Residuos P."),
+    array("Cantidad(KG): ", $resultadopapelgeneral, $resultadocartongeneral, $resultadovidriogeneral,$resultadocartongeneral,$resultadopeadgeneral,$resultadoelectrogeneral,$resultadocartuchostgeneral,$resultadolatasgeneral,$resultadotaparroscasgeneral,$resultadoresiduospgeneral),
+    array("Agua(Lts): ", $resaguapapel, $resaguacarton, $resaguavidrio,$resaguapet,$resaguapead,"0","0",$resagualatas,$resaguatapa,"0"),
+    array("CO2(KG): ", $rescopapel, $rescocarton, $rescovidrio,$rescopet,$rescopead,$rescoelect,"0",$rescolatas,$rescotapa,$rescoresiduos),
+    array("Energia(kWh): ", $resenepapel, $resenecarton, $resenevidrio,$resenepet,$resenepead,$reseneelect,$resenetoner,$resenelatas,$resenetapa,$reseneresiduos),
   );
+$pdf->SetFont('Arial', '', 20);
+$pdf->Cell(0,10,'CONCENTRADO',0,1,'C');
 $pdf->SetFont('Arial', '', 12);
 for ($i = 0; $i < $numRows; $i++) {
     for ($j = 0; $j < $numCols; $j++) {
@@ -314,5 +348,6 @@ for ($i = 0; $i < $numRows; $i++) {
     }
     $pdf->Ln();
 }
+$pdf->Cell(0,10,'Departamento de Sustentabilidad X VertWeb',0,1);
 $pdf->Output();
 ?>
