@@ -2,7 +2,17 @@
 ///Verificacion de inicio de sesion
 error_reporting(0);
 if(empty($_COOKIE['TestCookie1'])){
-    echo '<h1>La cookies expiro o no se inicio sesion, regresaras al login en 5 segundos <h1>';
+  echo '<p>La sesion se cerro, la página se redirigirá al índice en:</p>
+  <div id="contador">5</div>
+  <script>
+    var segundos = 5;
+    setInterval(function() {
+      segundos--;
+      document.getElementById("contador").innerHTML = segundos;
+    }, 1000);
+  </script>';
+  
+    header("Refresh: 5; url=../index.html");
     die();
 }
 ?>
