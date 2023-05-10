@@ -15,7 +15,25 @@ $taparroscas=$_GET['taparroscas'];
 $residuos=$_GET['residuos'];
 $electronicos=$_GET['electronicos'];
 $TOTALMATERIAL=($papel+$carton+$vidrio+$pet+$pead+$electronicos+$latas+$taparroscas+$residuos+$toner);
-
+$numero_aleatorio = rand(1, 5);
+$mensaje;
+switch ($numero_aleatorio) {
+  case 1:
+    $mensaje="El CO2 es que es un gas esencial para la vida en la Tierra, pero en altas concentraciones puede ser peligroso para la salud humana y el medio ambiente.";
+    break;
+  case 2:
+    $mensaje="El CO2 tiene un impacto directo en el sabor de las bebidas carbonatadas";
+    break;
+  case 3:
+   $mensaje="La concentración de CO2 en la atmósfera ha aumentado significativamente desde la Revolución Industrial";
+    break;
+  case 4:
+    $mensaje="El CO2 es que es un gas inodoro, incoloro e insípido, lo que significa que no tiene sabor, color ni olor perceptible para los humanos";
+    break;
+  case 5:
+    $mensaje="La presencia de CO2 en la atmósfera es necesaria para mantener una temperatura habitable en la Tierra";
+  break;
+}
 
 
 
@@ -69,9 +87,21 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$papelAGUA+$cartonAGUA+$vidrioAGUA+$latasAGUA+$ta
 <head>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-<link href="/../6to/layout/styles/estilosD.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="description" content="graficos eco">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="..\..\css\estilos.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<title>Graficar por semestre</title>
 <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -95,133 +125,188 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$papelAGUA+$cartonAGUA+$vidrioAGUA+$latasAGUA+$ta
           title: 'MATERIAL EN BRUTO',
           legend: 'a',
           pieSliceText: 'a',
+          backgroundColor: 'transparent',
           slices: {  4: {offset: 0.2},
                     12: {offset: 0.3},
                     14: {offset: 0.4},
                     15: {offset: 0.5},
           },
+          legend: {
+      textStyle: {
+        color: 'white'
+      }
+    },
+    pieSliceTextStyle: {
+      color: 'white'
+    },
+    titleTextStyle: {
+      color: 'white'
+    }
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('grafico'));
         chart.draw(data, options);
       }
     </script>
-      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript">
-    google.charts.load("current", {packages:['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ['Dias', 'Dias', { role: 'style' } ],
-        ['PAP', <?php echo $papelAGUA?>, 'color: gray'],
-        ['CAR', <?php echo $cartonAGUA?>, 'color: gray'],
-        ['VID', <?php echo $vidrioAGUA?>, 'color: gray'],
-        ['PET', <?php echo $petAGUA?>, 'color: gray'],
-        ['PEAD', <?php echo $peadAGUA?>, 'color: gray'],
-        ['LAT', <?php echo $latasAGUA?>, 'color: gray'],
-        ['TAPA', <?php echo $taparroscasAGUA?>, 'color: gray'],
-        ['TOTAL', <?php echo $TOTALAGUA?>, 'opacity: 0.2']
-      ]);
-    
+    <body>
+    <nav class="menu">
+    <h1 id="titulo">Graficos generados correctamente</h1>
+    <center><a href="graficasemestre.php"  class="btn">Volver</a></center>
+</nav>
+<div id="grafico" style="width:700px; height: 500px;"></div>
+<div class="div-dos">
+  <div class="contenido">
+    Cantidad total de material: <?php echo $TOTALMATERIAL?> KG
+    <br><br>
+    Cantidad total de emisiones de CO2 evitadas: <?php echo $TOTALCO2?> KG
+    <br><br>
+    Cantidad total de dias con agua: <?php echo $TOTALAGUA?> dias
+    <br><br>
+    Cantidad total de árboles que se evitan talar: <?php echo $TOTALARBOLES?>
+  </div>
+</div>
+<div class="chart-container">
+<canvas id="myChart"></canvas>
+  </div>
+  <div class="div-dospt2">
+<h2 class="dato">Sabias que...<h2>
+  <br>
+  <p class="mensaje"><?php echo $mensaje; ?></p>
+  </div>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <h3 id="titulo">Cada vez que graficas piensas en el mundo</h3>
+  <div id="chart_div"></div>
+  <div class="overlay"></div>
+</div>
+<div class="container">
+    <div class="cube">
+    </div>
+  </div>
+  <script>
+    var ctx1 = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: ['Papel', 'Carton', 'Vidrio', 'C.Toner', 'Taparroscas', 'Latas','Elect.','Res.P','PET','PEAD'],
+        datasets: [{
+            label: 'Kilos de CO2',
+            data: [<?php echo $papelCO2?>,<?php echo $cartonCO2?>, <?php echo $vidrioCO2?>, 0,<?php echo $taparroscasCO2?>,<?php echo $latasCO2?>, <?php echo $electronicosCO2?>, <?php echo $residuosCO2?>, <?php echo $petCO2?>, <?php echo $peadCO2?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+      
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+myChart.update();
 
-      var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1,
-                       { calc: "stringify",
-                         sourceColumn: 1,
-                         type: "string",
-                         role: "annotation" },
-                       2]);
+</script>
+<script>
+   google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['Material', 'Litros',],
+        ['Papel', <?php echo $papelAGUA?>],
+        ['Carton', <?php echo $cartonAGUA?>],
+        ['Vidrio', <?php echo $vidrioAGUA?>],
+        ['PET', <?php echo $petAGUA?>],
+        ['PEAD', <?php echo $peadAGUA?>],
+        ['Latas', <?php echo $latasAGUA?>],
+        ['Taparroscas', <?php echo $taparroscasAGUA?>],
+        
+      ]);
 
       var options = {
-        title: "Dias que puede vivir una persona con el agua reciclada",
-        width: 600,
-        height: 400,
-        bar: {groupWidth: "95%"},
-        legend: { position: "none" },
+        backgroundColor: 'transparent',
+        title: 'Agua en Litros',
+        titleTextStyle: { color: '#fff' },
+        chartArea: {width: '50%'},
+        hAxis: {
+          minValue: 0,
+           textStyle: { color: '#fff' }
+        },
+        vAxis: {
+          textStyle: { color: '#fff' }
+        },       legend: {
+      textStyle: {
+        color: 'white'
+      }
+    },
       };
-      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-      chart.draw(view, options);
-  }
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
   </script>
-       
-
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['bar']});
-      google.charts.setOnLoadCallback(drawStuff);
-
-      function drawStuff() {
-        var data = new google.visualization.arrayToDataTable([
-          ['Materiales', 'KG de CO2'],
-          ["PAP", <?php echo($papelCO2) ?>],
-          ["CAR", <?php echo($cartonCO2) ?>],
-          ["VID", <?php echo($vidrioCO2) ?>],
-          ["PET", <?php echo($petCO2) ?>],
-          ["PEAD", <?php echo($peadCO2) ?>],
-          ["LAT", <?php echo($latasCO2) ?>],
-          ["TAPA", <?php echo($taparroscasCO2) ?>],
-          ["RESP", <?php echo($residuosCO2) ?>],
-          ["ELEC", <?php echo($electronicosCO2) ?>],
-          ['TOTAL', <?php echo($TOTALCO2) ?>]
-        ]);
-        var options = {
-          title: 'Cantidad de CO2 que se evitara producir',
-          width: 900,
-          legend: { position: 'none' },
-          chart: { title: 'Cantidad de CO2 que se evitara producir',
-                   subtitle: 'por los materiales reciclados' },
-          bars: 'vertical', // Required for Material Bar Charts.
-          axes: {
-            x: {
-              0: { side: 'top', label: 'Materiales (en kilos)'} // Top x-axis.
+  <div class="chart-container">
+  <canvas id="lineas"></canvas>
+  </div>
+  <div class="lineasgrafi">
+  <script>
+    
+    var ctx1 = document.getElementById('lineas').getContext('2d');
+var myChart = new Chart(ctx1, {
+    type: 'line',
+    data: {
+        labels: ['Papel', 'Carton', 'C.Toner', 'Taparroscas', 'Latas','Elect.','PET','PEAD'],
+        datasets: [{
+            label: 'Electricidad ahorrada',
+            data: [<?php echo $papelElec?>,<?php echo $cartonElec?>, <?php echo $tonerElec?>, 0,<?php echo $taparroscasElec?>,<?php echo $latasElec?>, <?php echo $electronicosElec?>, <?php echo $petElec?>, <?php echo $peadElec?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
             }
-          },
-          bar: { groupWidth: "90%" }
-        };
+        }
+    }
+});
+myChart.update();
 
-        var chart = new google.charts.Bar(document.getElementById('top22'));
-        chart.draw(data, options);
-      };
-    </script>
-
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graficos</title>
-  <link rel="icon" type="image/png" href="images/a.png"/>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-<script src="https://kit.fontawesome.com/5529d915fb.js" crossorigin="anonymous"></script>
-</head>
-<body>
-
-<div id="divid">
- 
-  <h3 class="display-6">Graficos generados correctamente</h3>
-  <a href="/../6to/Base-de-datos/Basededatos.php"  class="btn btn-danger">Volver</a>
-    </div>
-
-    <div class="divid1"> <div id="piechart" style="width:700px; height: 500px;"></div></div>
-
-<div class="dividpay">
-  <br><br>
-<p id="pid">Cantidad total de material: <?php echo $TOTALMATERIAL?> KG</p>
-<br><br>
-<p id="pid">Cantidad total de emisiones de CO2 evitadas: <?php echo $TOTALCO2?> KG</p>
-<br><br>
-<p id="pid">Cantidad total de dias con agua: <?php echo $TOTALAGUA?> dias</p>
-<br><br>
-<p id="pid">Cantidad total de energia ahorrada: en proceso</p>
-
+</script>
 </div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<center><h2>CO2</h2><center>
-<br><br>
-
-<center><div id="top22" style="width:  900px; height: 500px;"></div><center><br>
-<center><h2>AGUA</h2><center>
-<br>
-  <br>
-<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>
 </html>
