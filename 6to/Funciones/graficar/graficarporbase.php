@@ -103,7 +103,6 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$papelAGUA+$cartonAGUA+$vidrioAGUA+$latasAGUA+$ta
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Rubik:wght@500&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="description" content="graficos eco">
-    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -115,7 +114,7 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$papelAGUA+$cartonAGUA+$vidrioAGUA+$latasAGUA+$ta
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <title>Plantilla 1</title>
+    <title>Graficar por base</title>
     <script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
@@ -164,9 +163,19 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$papelAGUA+$cartonAGUA+$vidrioAGUA+$latasAGUA+$ta
     </script>
  
 </head>
+<style>
+      .lineasgrafi {
+  position: relative;
+  margin-right: 500px;
+  width: 30px;
+  height: 20px;
+
+}
+  </style>
 <body>
     <nav class="menu">
     <h1 id="titulo">Graficos generados correctamente</h1>
+    <center><a href="/../6to/Base-de-datos/Basededatos.php"  class="btn">Volver</a></center>
 </nav>
 <div id="grafico" style="width:700px; height: 500px;"></div>
 <div class="div-dos">
@@ -176,6 +185,8 @@ $TOTALAGUA=($peadAGUA+$petAGUA+$papelAGUA+$cartonAGUA+$vidrioAGUA+$latasAGUA+$ta
     Cantidad total de emisiones de CO2 evitadas: <?php echo $TOTALCO2?> KG
     <br><br>
     Cantidad total de dias con agua: <?php echo $TOTALAGUA?> dias
+    <br><br>
+    Cantidad total de árboles que se evitan talar: <?php echo $TOTALARBOLES?>
   </div>
 </div>
 <div class="chart-container">
@@ -243,11 +254,14 @@ function drawBasic() {
 
       var data = google.visualization.arrayToDataTable([
         ['Material', 'Litros',],
-        ['New York City, NY', 8175000],
-        ['Los Angeles, CA', 3792000],
-        ['Chicago, IL', 2695000],
-        ['Houston, TX', 2099000],
-        ['Philadelphia, PA', 1526000]
+        ['Papel', <?php echo $papelAGUA?>],
+        ['Carton', <?php echo $cartonAGUA?>],
+        ['Vidrio', <?php echo $vidrioAGUA?>],
+        ['PET', <?php echo $petAGUA?>],
+        ['PEAD', <?php echo $peadAGUA?>],
+        ['Latas', <?php echo $latasAGUA?>],
+        ['Taparroscas', <?php echo $taparroscasAGUA?>],
+        
       ]);
 
       var options = {
@@ -273,8 +287,50 @@ function drawBasic() {
       chart.draw(data, options);
     }
   </script>
-    <style>
-  </style>
+  <div class="chart-container">
+  <canvas id="lineas"></canvas>
+  </div>
+  <div class="lineasgrafi">
+  <script>
+    
+    var ctx1 = document.getElementById('lineas').getContext('2d');
+var myChart = new Chart(ctx1, {
+    type: 'line',
+    data: {
+        labels: ['Papel', 'Carton', 'C.Toner', 'Taparroscas', 'Latas','Elect.','PET','PEAD'],
+        datasets: [{
+            label: 'Electricidad ahorrada',
+            data: [<?php echo $papelElec?>,<?php echo $cartonElec?>, <?php echo $tonerElec?>, 0,<?php echo $taparroscasElec?>,<?php echo $latasElec?>, <?php echo $electronicosElec?>, <?php echo $petElec?>, <?php echo $peadElec?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+myChart.update();
 
+</script>
+</div>
 </body>
 </html>
