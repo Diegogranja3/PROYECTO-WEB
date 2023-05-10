@@ -27,7 +27,7 @@ $conexion=mysqli_connect('localhost','root','','sql');
        {
         background-repeat: no-repeat;
         background-size: cover;
-        background-image:url("images\basesfondowo.jpg");
+        background-image:url("../../images/basesfondowo.jpg");
        }
        table
        {
