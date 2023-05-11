@@ -5,110 +5,88 @@
             ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <title>Registro rapido</title>
-    <link rel="icon" type="image/png" href="images/ed.png"/>
-    <link href="C:\xampp\htdocs\xanpon\estilo.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    <!-- Icons font CSS-->
-    <link href="../../vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="../../vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Vendor CSS-->
-    <link href="../../vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="../../vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
-    <!-- Main CSS-->
-    <link href="../../css/main.css" rel="stylesheet" media="all">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<title>Login Form</title>
+	<style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+        }
+   body {
+			background-image: url(../../../images/loginfondowo.png);
+			background-size: cover;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+		}
+		
+		form {
+			background-color: #fff;
+			width: 300px;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+		}
+		
+		input[type="text"],
+		input[type="password"],
+		input[type="number"],
+		select {
+			display: block;
+			width: 100%;
+			margin-bottom: 10px;
+			padding: 5px;
+			font-size: 16px;
+			border-radius: 3px;
+			border: 1px solid #ccc;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			font-size: 16px;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+		
+		h2 {
+			text-align: center;
+			margin-top: 0;
+			margin-bottom: 20px;
+		}
+	</style>
 </head>
-<style>
-    body{
-       background-repeat: no-repeat;
-    background-size: cover;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url("../../assets/imgs/loginfondowo.png");
-    }
-    img{
-        max-width: 100%;
-    }
-    .centroform{
-        margin: 0 auto;
-        position:absolute;
-        width:100%;
-        text-align:center;
-    }
-    </style>
 <body>
-<div class="centroform"><center><h3 class="display-6" style="color: blanchedalmond;">Registro rapido</h3></center></div>
-<form class="formulario" method="POST">
-            <div class="page-wrapper  p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-4">
-                <div class="card-body">
-                        <div class="row row-space">
-   <center><label for="exempleInputEmail1" class="form-label m-auto">Nombre de la persona</label></center>
-   <div class="mb-3"><input required type="text" class="form-control" name="nombre"></div>
-                <div class="col-2"><div class="input-group">
-                <input class="form-control" step="0.01" required="required" type="number" name="papel" placeholder="Papel(KG)">
-            </div></div>
-<div class="col-2"><div class="input-group">
-                <input class="form-control" step="0.01"   required="required" type="number" name="carton" placeholder="Carton(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="vidrio" placeholder="Vidrio(KG)">
-</div></div>
-<div class="col-2"><div class="input-group">
-<input class="form-control" step="0.01"   required="required" type="number" name="pet" placeholder="PET(KG)">
-</div></div>
-<div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="pead" placeholder="PEAD(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="pebd" placeholder="PEBD(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="bopp" placeholder="BOPP(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="aluminio" placeholder="Aluminio(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="hojalata" placeholder="Hojalata(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="baterias" placeholder="Baterias(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="madera" placeholder="Madera(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="electronicos" placeholder="Electronicos(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="toner" placeholder="Cartuchos de toner(KG)">
-            </div></div>
-            <div class="col-2"><div class="input-group">
-            <input class="form-control" step="0.01"   required="required" type="number" name="rebaba" placeholder="Rebabas de hierro(KG)">
-            </div></div>
-            <div class="mb-3">
-                <center><label for="exempleInputEmail1" class="form-label m-auto">Fecha</label></center>
-                <input required type="date" class="form-control" name="fecha">
-</div>
-<div class="mb-3">
-            <p>Semestre correspondiente (verifica que sea acorde a la fecha)</p>
-            <input  class="form-check-input" type="radio" name="si" id="si" value="1" checked="true">Enero-Junio</input>
-            <input  class="form-check-input" type="radio" name="si" id="si" value="2">Julio-Diciembre</input></div>
-<center><div class="col-2"><div class="input-group"><button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Agregar registro</button></div></div></center>
-</form>
-<center><div><a href="../../Base-de-datos/Basededatos.php" class="btn btn-danger">Regresar</a></div></center>
-</div>
-            </div>
-        </div>
-    </div>
+	<form method="POST">
+		<h2 style="font-family: 'Montserrat', sans-serif;">Crear usuarios</h2>
+		<label for="username">Nombre completo:</label>
+		<input type="text" id="username" name="username" required>
+		<label for="username">Usuario (Numeros):</label>
+		<input type="number" id="usu" name="usu" required>
+		<label for="password">Contraseña:</label>
+		<input type="password" id="password" name="password" required>
+		
+		<label for="role">Rol:</label>
+		<select id="role" name="role">
+			<option value="operator">Operador</option>
+			<option value="admin">Administrador</option>
+		</select>
+		
+		<input type="submit" name="btnusu" value="Crear">
+        <div style="position: absolute;
+    top: 475px;
+    left: 720px;
+    width: 570px;
+    height: 300px;"><a href="../../../Base-de-datos/usuarios.php" class="btn btn-danger">Regresar</a></div>
+	</form>
 </body>
 </html>
 
