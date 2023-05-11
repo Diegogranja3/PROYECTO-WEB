@@ -21,12 +21,12 @@ $pead=$_POST['PEAD'];
 $electronicos=$_POST['ELEC'];
 $toner=$_POST['CTON'];
 $latas=$_POST['LAT'];
-$taparrosca=$_POST['TAPA'];
+$taparroscas=$_POST['TAPA'];
 $residuos=$_POST['RESP'];
 date_default_timezone_set('America/Mexico_City');
 $fecha= date('y/m/d');
 $semestre=$sem;
-$TOTALMATERIAL=($papel+$carton+$vidrio+$pet+$pead+$electronicos+$toner+$latas+$taparrosca+$residuos);
+$TOTALMATERIAL=($papel+$carton+$vidrio+$pet+$pead+$electronicos+$toner+$latas+$taparroscas+$residuos);
 $numero_aleatorio = rand(1, 5);
 $mensaje;
 switch ($numero_aleatorio) {
@@ -47,7 +47,7 @@ switch ($numero_aleatorio) {
   break;
 }
 
-$insertar="INSERT INTO ds(Nombre_completo, Papel_KG, Carton_KG, Vidrio_KG, PET_KG, PEAD_KG, Electronicos_KG, Cartuchos_toner, Latas_KG, Taparroscas_KG, Residuos_peligrosos_KG, Fecha_entrega, Semestre)VALUES('$nombre','$papel','$carton','$vidrio','$pet','$pead','$electronicos','$toner','$latas','$taparrosca','$residuos','$fecha','$semestre')";
+$insertar="INSERT INTO ds(Nombre_completo, Papel_KG, Carton_KG, Vidrio_KG, PET_KG, PEAD_KG, Electronicos_KG, Cartuchos_toner, Latas_KG, Taparroscas_KG, Residuos_peligrosos_KG, Fecha_entrega, Semestre)VALUES('$nombre','$papel','$carton','$vidrio','$pet','$pead','$electronicos','$toner','$latas','$taparroscas','$residuos','$fecha','$semestre')";
 
   $ejecutarINSERTAR=mysqli_query($enlace,$insertar);
 
@@ -66,7 +66,7 @@ $vidrioCO2=($vidrio*0.3);
 $latasCO2=($latas*0.2);
 $papelCO2=($papel*1.5);
 $cartonCO2=($carton*0.75);
-$taparroscasCO2=($taparrosca*0.2);
+$taparroscasCO2=($taparroscas*0.2);
 $electronicosCO2=($electronicos*1.8);
 $residuosCO2=($residuos*3.8);
 $TOTALCO2=($petCO2+$peadCO2+$vidrioCO2+$latasCO2+$papelCO2+$cartonCO2+$taparroscasCO2+$electronicosCO2+$residuosCO2);
@@ -76,7 +76,7 @@ $papelElec=($papel*4);
 $cartonElec=($carton*4.3);
 $petElec=($pet*0.55);
 $peadElec=($pead*0.55);
-$taparroscasElec=($taparrosca*0.03);
+$taparroscasElec=($taparroscas*0.03);
 $tonerElec=($toner*7.5);
 $latasElec=($latas*0.33);
 $electronicosElec=($electronicos*6.425);
@@ -89,7 +89,7 @@ $papelAGUA=($papel*8);
 $cartonAGUA=($carton*4.3);
 $vidrioAGUA=($vidrio*0.15);
 $latasAGUA=($latas*5);
-$taparroscasAGUA=($taparrosca*2.5);
+$taparroscasAGUA=($taparroscas*2.5);
 $TOTALAGUA=($peadAGUA+$petAGUA+$papelAGUA+$cartonAGUA+$vidrioAGUA+$latasAGUA+$taparroscasAGUA);
 
 ?>
@@ -329,6 +329,4 @@ myChart.update();
 </div>
 </body>
 </html>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-</body>
-</html>
+
