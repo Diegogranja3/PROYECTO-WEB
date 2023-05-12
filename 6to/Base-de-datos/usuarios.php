@@ -2,7 +2,17 @@
 ///Verificacion de inicio de sesion
 error_reporting(0);
 if(empty($_COOKIE['TestCookie1'])){
-    echo '<h1>La cookies expiro o no se inicio sesion<h1>';
+  echo '<p>La sesion se cerro, la página se redirigirá al índice en:</p>
+  <div id="contador">5</div>
+  <script>
+    var segundos = 5;
+    setInterval(function() {
+      segundos--;
+      document.getElementById("contador").innerHTML = segundos;
+    }, 1000);
+  </script>';
+  
+    header("Refresh: 5; url=../index.html");
     die();
 }
 ?>
@@ -13,6 +23,7 @@ if(empty($_COOKIE['TestCookie1'])){
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<script src="https://kit.fontawesome.com/5529d915fb.js" crossorigin="anonymous"></script>
 <meta name="Description" content="Enter your description here"/>
 <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
@@ -57,7 +68,6 @@ thead{
 
   </style>
 <body>
-<script src="https://kit.fontawesome.com/5529d915fb.js" crossorigin="anonymous"></script>
 <?php 
  ///Conexion a la base de datos
 $servidor= "localhost";
@@ -77,7 +87,8 @@ if (!isset($_POST['buscar'])){$_POST['buscar'] = '';}
 <div class="col-12">
 <form method="POST" action="Basededatos.php">
 <div class="mb-3">
-<center><h3 class="display-5">Base de datos</h3><a href="Basededatos.php" style="text-decoration: none; color: black"><p>Ir a tabla de materiales <i class="fa-solid fa-circle-arrow-right fa-fade fa-xl" style="color: #000000;"></i></a></p></center>
+<center><h3 class="display-5">Base de datos</h3><a href="Basededatos.php" style="text-decoration: none; color: black"><p> <i class="fa-solid fa-circle-arrow-left fa-fade fa-xl" style="color: #1100ff;"></i> Ir a tabla de materiales</a></p>
+</center>
 <br>
 </div>
 </div>
@@ -111,6 +122,7 @@ document.write(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.ge
 $numero = mysqli_num_rows($busqueda); ?>
 </div>
 <center>
+<a href="admins.php" style="text-decoration: none; color: black"><p>Ir a tabla de administradores <i class="fa-solid fa-circle-arrow-right fa-fade fa-xl" style="color: #1100ff;"></i></a></p>
 <h5 class="card-tittle">Resultado (<?php echo $numero; ?>)</h5>
 </div>
 
@@ -121,7 +133,7 @@ $numero = mysqli_num_rows($busqueda); ?>
     <tr>
       <th>ID</th>
       <th>Nombre</th>
-      <th>Usurio</th>
+      <th>Usuario</th>
       <th>Opciones</th>
     </tr>
   </thead>
@@ -135,9 +147,9 @@ $numero = mysqli_num_rows($busqueda); ?>
       <td><?php echo $resultado["Usuario_operador"]; ?></td>
       <td>
           <!--Funciones extra para cada registro en la tabla!-->
-      <a href="../Funciones/modificar/modificarporbase.php?id=<?=$resultado['ID']?>"class="btn btn-small btn-warning"  ><i class="fa-solid fa-pen-to-square"></i></a>
+      <a href="../Funciones/modificar/usuarios/formatomod.php?id=<?=$resultado['ID_operador']?>&comprobacion=0"class="btn btn-small btn-warning"  ><i class="fa-solid fa-pen-to-square"></i></a>
         <br>
-        <a href="../Funciones/eliminar/eliminar.php?id=<?=$resultado['ID']?>" class="btn btn-small btn-danger" ><i   class="fa-solid fa-trash"></i></a>
+        <a href="../Funciones/eliminar/eliminaroperador.php?id=<?=$resultado['ID_operador']?>" class="btn btn-small btn-danger" ><i   class="fa-solid fa-trash"></i></a>
         <br>
 </tr>
       </td> 
