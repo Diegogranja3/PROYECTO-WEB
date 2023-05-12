@@ -68,7 +68,7 @@
 	<form method="POST">
 		<h2 style="font-family: 'Montserrat', sans-serif;">Crear usuarios</h2>
 		<label for="username">Nombre completo:</label>
-		<input type="text" id="username" name="username" required>
+		<input type="text" id="username" required pattern="[A-Za-z]+" name="username" required>
 		<label for="username">Usuario (Numeros):</label>
 		<input type="number" id="usu" name="usu" required>
 		<label for="password">Contraseña:</label>
