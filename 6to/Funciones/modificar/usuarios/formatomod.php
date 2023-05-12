@@ -102,7 +102,7 @@ setcookie('tercero', $tercero, time() + (86400 * 30), "/");
         <br>
         <br>
 		<label for="username">Nombre completo:</label>
-		<input type="text" id="username" name="username" value="<?=$datos->$nombre?>" required>
+		<input type="text" id="username" name="username" required pattern="[A-Za-z]+" value="<?=$datos->$nombre?>" required>
 		<label for="username">Usuario (Numeros):</label>
 		<input type="number" id="usu" name="usu" value="<?=$datos->$usuario?>" required>
 		<label for="password">Contraseña:</label>
