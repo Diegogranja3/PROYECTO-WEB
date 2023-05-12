@@ -14,14 +14,17 @@
 </head>
 <style>
   body{
-    background-image:url("https://fondosmil.com/fondo/27497.jpg");
-    margin:0;
-	padding:25px;
+    background-image: url("../../images/loginfondowo.png");
+    margin: 0px;
+	padding: 50px;
   background-repeat: no-repeat;
     background-size: cover;
 }
   </style>
 <body>
+<div class="card card-4">
+                <div class="card-body">
+                        <div class="row row-space">
   <center><h1>Graficar por semestre</h1></center>
     <form class="col-4 p-3 m-auto" class="formulario" id="formulario" name="formulario" method="POST">
     <div class="mb-3">
@@ -96,7 +99,7 @@ while ($resultadocartuchos = mysqli_fetch_assoc($cartuchosSQL)){ ?>
 <?php
 while ($resultadotapa = mysqli_fetch_assoc($taparroscasSQL)){ ?>
 <br>
-<center><h6>Entre <?php echo $fecha_inicio;?> y <?php echo $fecha_final;?> estan los siguientes registros:</h6></center>
+<center><h6>Entre "<?php echo $fecha_inicio;?>" y "<?php echo $fecha_final;?>" están los siguientes registros:</h6></center>
 <table class="table">
 <thead>
     <tr>
@@ -128,8 +131,11 @@ while ($resultadotapa = mysqli_fetch_assoc($taparroscasSQL)){ ?>
       <td>
       <a href="graficossemestrre.php?papel=<?=$resultado['Sumapapel']?>&carton=<?=$resultadocart['Sumacarton']?>&vidrio=<?=$resultadovid['Sumavidrio']?>&pet=<?=$resultadopet['SumaPET']?>&pead=<?=$resultadopead['SumaPEAD']?>&toner=<?=$resultadocartuchos['SumaToner']?>&latas=<?=$resultadolatas['SumaLatas']?>&taparroscas=<?=$resultadotapa['SumaTapa']?>&residuos=<?=$resultadoRES['SumaRes']?>&electronicos=<?=$resultadoelect['SumaElectronicos']?>" class="btn btn-small btn-danger"><i class="fa-solid fa-arrow-trend-up"></i></a>
         <br>
+        </td>
 </tr>
-      </td>
       <?php
        }}}}}}}}}}
         ?>
+        </div>
+            </div>
+        </div>
