@@ -51,7 +51,7 @@
                 <div class="card-body">
                         <div class="row row-space">
    <center><label for="exempleInputEmail1" class="form-label m-auto">Nombre de la persona</label></center>
-   <div class="mb-3"><input required type="text" class="form-control" name="nombre"></div>
+   <div class="mb-3"><input required type="text" class="form-control" name="nombre" required pattern="[A-Za-z]+"></div>
                 <div class="col-2"><div class="input-group">
                 <input class="form-control" step="0.01" required="required" type="number" name="papel" placeholder="Papel(KG)">
             </div></div>
