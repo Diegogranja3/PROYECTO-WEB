@@ -18,7 +18,9 @@
 </head>
 <style>
     body{
-      background-color:black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../../images/loginfondowo.png");
     }
     img{
         max-width: 100%;
