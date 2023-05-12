@@ -56,7 +56,7 @@ $sql=$conexion->query("SELECT*FROM ds WHERE ID=$id");
             while($datos=$sql->fetch_object()){?>
             <div class="mb-3">
             <label for="exempleInputEmail1" class="form-label m-auto">Nombre de la persona</label>
-                <input required type="text" class="form-control" name="nombre" value="<?=$datos->Nombre_completo?>">
+                <input required type="text" class="form-control" name="nombre" required pattern="[A-Za-z]+" value="<?=$datos->Nombre_completo?>">
             </div>
                 <div class="col-2">               
                 <label for="exempleInputEmail1" class="form-label m-auto">Papel(KG)</label>
