@@ -110,12 +110,8 @@ setcookie('tercero', $tercero, time() + (86400 * 30), "/");
 
         <?php }
             ?>
-		<input type="submit" name="btnusu" value="Modear">
-        <div style="position: absolute;
-    top: 468px;
-    left: 720px;
-    width: 570px;
-    height: 300px;"><a href="../../../Base-de-datos/usuarios.php" class="btn btn-danger">Regresar</a></div>
+		<center><input type="submit" name="btnusu" value="Modear">
+        <a href="../../../Base-de-datos/usuarios.php" style="font-size:17px;" class="btn btn-danger">Regresar</a></center>
 	</form>
 </body>
 </html>
