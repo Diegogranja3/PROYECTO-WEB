@@ -71,11 +71,7 @@ thead{
 <body>
 <?php 
  ///Conexion a la base de datos
-$servidor= "localhost";
-$usuario= "root";
-$password = "";
-$nombreBD= "sql";
-$conexion = new mysqli($servidor, $usuario, $password, $nombreBD);
+ $conexion=mysqli_connect('sql10.freemysqlhosting.net','sql10618284','1El3h2gCt6','sql10618284');
 ///Comprobacion de conexion
 if ($conexion->connect_error) {
     die("la conexión ha fallado: " . $conexion->connect_error);
