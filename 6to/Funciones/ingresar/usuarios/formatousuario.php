@@ -80,12 +80,8 @@
 			<option value="admin">Administrador</option>
 		</select>
 		
-		<input type="submit" name="btnusu" value="Crear">
-        <div style="position: absolute;
-    top: 475px;
-    left: 720px;
-    width: 570px;
-    height: 300px;"><a href="../../../Base-de-datos/usuarios.php" class="btn btn-danger">Regresar</a></div>
+		<center><input type="submit" name="btnusu" value="Crear">
+        <a href="../../../Base-de-datos/usuarios.php" class="btn btn-danger">Regresar</a></center>
 	</form>
 </body>
 </html>
