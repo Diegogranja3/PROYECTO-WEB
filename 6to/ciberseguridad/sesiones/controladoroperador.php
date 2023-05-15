@@ -1,6 +1,6 @@
 <?php
 if(!empty($_POST["Continuar"])){
-    if(empty($_POST["usuario"]) and empty($_POST["clave"])){
+    if(empty($_POST["usuario"]) or empty($_POST["clave"])){
         echo '<div class="alert alert-danger">LOS CAMPOS ESTAN VACIOS</div>';
     }else{
          $usuario=$_POST["usuario"];
