@@ -52,9 +52,12 @@
 </html>
 <?php
 error_reporting(0);
-$conexion=mysqli_connect('sql10.freemysqlhosting.net','sql10618284','1El3h2gCt6','sql10618284');
+$conexion=mysqli_connect('localhost','root','','sql');
 if ($conexion->connect_error) {
  echo "Error en la base de datos";
+}
+if(!empty($_POST["Continuar"])){
+  $xd=1;
 }
 $anio=$_POST['anio'];
 if($_POST['si']==1){
@@ -99,6 +102,9 @@ while ($resultadocartuchos = mysqli_fetch_assoc($cartuchosSQL)){ ?>
 <?php
 while ($resultadotapa = mysqli_fetch_assoc($taparroscasSQL)){ ?>
 <br>
+<?php
+if($xd==1){ 
+?>
 <center><h6>Entre "<?php echo $fecha_inicio;?>" y "<?php echo $fecha_final;?>" están los siguientes registros:</h6></center>
 <table class="table">
 <thead>
@@ -134,7 +140,9 @@ while ($resultadotapa = mysqli_fetch_assoc($taparroscasSQL)){ ?>
         </td>
 </tr>
       <?php
-       }}}}}}}}}}
+       }else{
+        echo '<center><h4>Seleccione una fecha</h4></center>';
+       }}}}}}}}}}}
         ?>
         </div>
             </div>

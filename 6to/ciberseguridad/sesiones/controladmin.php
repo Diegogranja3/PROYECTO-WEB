@@ -15,7 +15,9 @@ if(!empty($_POST["Continuar"])){
          }else{
             echo '<div class="alert alert-danger">DATOS INCORRECTOS</div>';
          }
-    }
+        }else{
+            echo '<div class="alert alert-danger">DATOS INCORRECTOS</div>';
+        }
 }
 }
 ?>

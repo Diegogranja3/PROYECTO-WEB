@@ -1,34 +1,11 @@
 <?php
   error_reporting(0);
-if(empty($_POST["papel"])){
-    $_POST["papel"]='0';
-}
-if(empty($_POST["carton"])){
-    $_POST["carton"]='0';
-}
-if(empty($_POST["vidrio"])){
-    $_POST["vidrio"]='0';
-}
-if(empty($_POST["pet"])){
-    $_POST["pet"]='0';
-}
-if(empty($_POST["pead"])){
-    $_POST["pead"]='0';
-}
-if(empty($_POST["elec"])){
-    $_POST["elec"]='0';
-}
-if(empty($_POST["cton"])){
-    $_POST["cton"]='0';
-}
-if(empty($_POST["lat"])){
-    $_POST["lat"]='0';
-}
-if(empty($_POST["tapa"])){
-    $_POST["tapa"]='0';
-}
-if(empty($_POST["resp"])){
-    $_POST["resp"]='0';
+  $campos = array("papel", "carton", "vidrio","pet","pead","elec","cton","lat","tapa","resp"); // Agrega los nombres de los campos que deseas validar
+
+foreach ($campos as $campo) {
+    if ($_POST[$campo] < 0) {
+        $_POST[$campo] = '0';
+    }
 }
 if($_POST['si']==1){
     $sem="Enero-Junio";
@@ -57,7 +34,5 @@ if($sql==1){
         echo '<div class="alert alert-danger">EL REGISTRO NO FUE EXITOSO</div>';
     }
 
-}else{
- echo '<div class="alert alert-danger">No agregar valores negativos como -1</div>';
 }
 ?>

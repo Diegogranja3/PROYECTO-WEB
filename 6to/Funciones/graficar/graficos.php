@@ -1,8 +1,12 @@
 <?php
-session_start();
-session_destroy();
-$enlace=mysqli_connect('sql10.freemysqlhosting.net','sql10618284','1El3h2gCt6','sql10618284');
+$enlace=mysqli_connect('localhost','root','','sql');
+$campos = array("PAP", "CAR", "VID","PET","PEAD","ELEC","CTON","LAT","TAPA","RESP"); // Agrega los nombres de los campos que deseas validar
 
+foreach ($campos as $campo) {
+    if ($_POST[$campo] < 0) {
+        $_POST[$campo] = '0';
+    }
+}
 if(!$enlace){
   echo"Error en la conexion con el servidor";
 }

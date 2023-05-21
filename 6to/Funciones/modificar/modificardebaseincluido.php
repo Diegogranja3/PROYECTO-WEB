@@ -1,5 +1,12 @@
 <?php
 error_reporting(0);
+$campos = array("papel", "carton", "vidrio","pet","pead","elec","cton","lat","tapa","resp"); // Agrega los nombres de los campos que deseas validar
+
+foreach ($campos as $campo) {
+    if ($_POST[$campo] < 0) {
+        $_POST[$campo] = '0';
+    }
+}
 if($_POST['si']==1){
     $sem="Enero-Junio";
     }

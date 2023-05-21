@@ -43,7 +43,7 @@
     }
     </style>
 <body>
-<div class="centroform"><center><h3 class="display-6" style="color: blanchedalmond;">Registro rapido</h3></center></div>
+<div class="centroform"><center><h3 class="display-6" style="color: blanchedalmond;">Registro rápido</h3></center></div>
 <form class="formulario" method="POST">
             <div class="page-wrapper  p-t-130 p-b-100 font-poppins">
         <div class="wrapper wrapper--w680">
@@ -53,7 +53,7 @@
    <center><label for="exempleInputEmail1" class="form-label m-auto">Nombre de la persona</label></center>
    <div class="mb-3"><input required type="text" class="form-control" name="nombre" required pattern="[A-Za-z]+"></div>
                 <div class="col-2"><div class="input-group">
-                <input class="form-control" step="0.01" required="required" type="number" name="papel" placeholder="Papel(KG)">
+                <input class="form-control" step="0.01" required="required" type="number" name="papel" id="myInput" placeholder="Papel(KG)">
             </div></div>
 <div class="col-2"><div class="input-group">
                 <input class="form-control" step="0.01"   required="required" type="number" name="carton" placeholder="Carton(KG)">
@@ -92,6 +92,21 @@
             <input  class="form-check-input" type="radio" name="si" id="si" value="2">Julio-Diciembre</input></div>
 <center><div class="col-2"><div class="input-group"><button type="submit" class="btn btn-primary" name="btnregistrar" value="ok">Agregar registro</button></div></div></center>
 </form>
+<script>
+function submitForm() {
+  var inputValue = document.getElementById('myInput').value;
+  
+  if (inputValue < 0) {
+    alert('¡No se permiten valores negativos!');
+    return;
+  }
+  
+  // Realizar alguna acción con el valor no negativo aquí
+  
+  // Por ejemplo, enviar el formulario
+  document.getElementById('formulario').submit();
+}
+</script>
 <center><div><a href="../../Base-de-datos/Basededatos.php" class="btn btn-danger">Regresar</a></div></center>
 </div>
             </div>

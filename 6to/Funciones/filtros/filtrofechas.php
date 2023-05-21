@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors','Off');
-$conexion=mysqli_connect('sql10.freemysqlhosting.net','sql10618284','1El3h2gCt6','sql10618284');
+$conexion=mysqli_connect('localhost','root','','sql');
 ///error_reporting(E_ALL);
 //ini_set('display_errors','Off');
 ?>
@@ -79,7 +79,7 @@ $conexion=mysqli_connect('sql10.freemysqlhosting.net','sql10618284','1El3h2gCt6'
             <input type="date" class="form-control" name="fecha_final" required>
         </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Buscar</button>
+                <button type="submit" class="btn btn-primary" name="Continuar" value="Continuar">Buscar</button>
             </div>
     
         </div>
@@ -93,12 +93,16 @@ $conexion=mysqli_connect('sql10.freemysqlhosting.net','sql10618284','1El3h2gCt6'
 <?php
 $fecha_inicio = $_POST['fecha_inicio'];
 $fecha_final  = $_POST['fecha_final'];
-
+if(!empty($_POST["Continuar"])){
+    $xd=1;
+  }
 $materialista = $conexion->query("SELECT * FROM ds WHERE fecha_entrega BETWEEN '{$fecha_inicio}' AND '{$fecha_final}'");?>
 
 
 <div class="card col-12 mt-5">
 <div class="card-body">
+    <?php
+    if($xd==1){?>
 <table border="1px" class="table table-striped">
   <thead class="thead-dark">
     <tr>
@@ -147,6 +151,8 @@ $materialista = $conexion->query("SELECT * FROM ds WHERE fecha_entrega BETWEEN '
       </td> 
 		</tr>
 <?php 
+}}else{
+    echo '<center><h3>Selecciona una fecha</h3></center>';
 }?>
 </div>
 </div>

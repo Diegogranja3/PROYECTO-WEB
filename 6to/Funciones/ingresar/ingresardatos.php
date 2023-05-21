@@ -5,7 +5,7 @@ if(empty($_COOKIE['TestCookie'])){
 }
 $nombre=$_COOKIE['TestCookie'];
 error_reporting(0);
-$enlace=mysqli_connect('sql10.freemysqlhosting.net','sql10618284','1El3h2gCt6','sql10618284');
+$enlace=mysqli_connect('localhost','root','','sql');
 
 if(!$enlace){
     echo"Error en la conexion con el servidor";

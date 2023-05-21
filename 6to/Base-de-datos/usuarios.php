@@ -70,7 +70,7 @@ thead{
 <body>
 <?php 
  ///Conexion a la base de datos
- $conexion=mysqli_connect('sql10.freemysqlhosting.net','sql10618284','1El3h2gCt6','sql10618284');
+ $conexion=mysqli_connect('localhost','root','','sql');
 ///Comprobacion de conexion
 if ($conexion->connect_error) {
     die("la conexión ha fallado: " . $conexion->connect_error);
