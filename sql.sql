@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-05-2023 a las 16:26:15
--- Versión del servidor: 10.4.19-MariaDB
--- Versión de PHP: 8.0.6
+-- Tiempo de generación: 22-05-2023 a las 01:04:16
+-- Versión del servidor: 10.4.27-MariaDB
+-- Versión de PHP: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,24 +40,26 @@ CREATE TABLE `ds` (
   `Latas_KG` decimal(11,2) NOT NULL,
   `Taparroscas_KG` decimal(11,2) NOT NULL,
   `Residuos_peligrosos_KG` decimal(11,2) NOT NULL,
+  `Residuos_biologicos` decimal(11,2) NOT NULL,
   `Fecha_entrega` date DEFAULT NULL,
   `Semestre` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `ds`
 --
 
-INSERT INTO `ds` (`ID`, `Nombre_completo`, `Papel_KG`, `Carton_KG`, `Vidrio_KG`, `PET_KG`, `PEAD_KG`, `Electronicos_KG`, `Cartuchos_toner`, `Latas_KG`, `Taparroscas_KG`, `Residuos_peligrosos_KG`, `Fecha_entrega`, `Semestre`) VALUES
-(88998, 'PIA', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '1.00', '0.00', '0.00', '0.00', '2023-04-16', 'Enero-Junio'),
-(89000, 'e', '11.00', '11.00', '99.00', '9.00', '1.00', '1.00', '9.00', '0.00', '0.00', '0.00', '2023-08-10', 'Julio-Diciembre'),
-(89001, 'Diego', '1111.00', '11.00', '111.00', '1.00', '1.00', '1.00', '1.00', '0.00', '0.00', '0.00', '2023-04-16', 'Enero-Junio'),
-(89006, '2', '2.00', '2.00', '2.00', '2.00', '2.00', '2.00', '2.00', '0.00', '0.00', '0.00', '2023-11-07', 'Julio-Diciembre'),
-(89007, '2', '22.00', '222.00', '3.00', '3.00', '3.00', '3.00', '333.00', '0.00', '0.00', '0.00', '2023-12-12', 'Julio-Diciembre'),
-(89008, 'PIA', '45.00', '1.00', '0.50', '6.00', '10.00', '30.00', '25.00', '0.00', '0.00', '0.00', '2023-04-17', 'Enero-Junio'),
-(89009, 'PIA', '6.00', '6.00', '6.00', '6.00', '6.00', '6.00', '6.00', '0.00', '0.00', '0.00', '2023-04-17', 'Enero-Junio'),
-(234234, 'asa', '11.00', '11.00', '11.00', '11.00', '11.00', '11.00', '11.00', '11.00', '11.00', '111.00', '2023-05-01', 'Enero-Junio'),
-(999999, 'asa', '11.00', '11.00', '11.00', '11.00', '11.00', '11.00', '11.00', '11.00', '11.00', '111.00', '2023-05-01', 'Enero-Junio');
+INSERT INTO `ds` (`ID`, `Nombre_completo`, `Papel_KG`, `Carton_KG`, `Vidrio_KG`, `PET_KG`, `PEAD_KG`, `Electronicos_KG`, `Cartuchos_toner`, `Latas_KG`, `Taparroscas_KG`, `Residuos_peligrosos_KG`, `Residuos_biologicos`, `Fecha_entrega`, `Semestre`) VALUES
+(1, 'rfp', '9.00', '99.00', '9.00', '9.00', '9.00', '999.00', '9.00', '9.00', '9.00', '9.00', '0.00', '2023-10-10', 'Julio-Diciembre'),
+(2, 'a', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2023-05-02', 'Enero-Junio'),
+(3, 'a', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2020-10-10', 'Enero-Junio'),
+(4, 's', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0001-01-01', 'Enero-Junio'),
+(5, 'wawa', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0111-11-11', 'Enero-Junio'),
+(6, 'wawa', '0.00', '0.00', '101.00', '10.00', '1010.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2023-05-11', 'Enero-Junio'),
+(7, 'deirf', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2023-05-24', 'Enero-Junio'),
+(8, 'wawa', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2023-05-21', 'Enero-Junio'),
+(9, 'wawa', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '2023-05-21', 'Enero-Junio'),
+(10, 'wa', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '0.00', '1010-10-10', 'Enero-Junio');
 
 -- --------------------------------------------------------
 
@@ -67,9 +69,9 @@ INSERT INTO `ds` (`ID`, `Nombre_completo`, `Papel_KG`, `Carton_KG`, `Vidrio_KG`,
 
 CREATE TABLE `loginadmin` (
   `ID_admin` int(11) NOT NULL,
-  `Nombre_admin` varchar(80) COLLATE utf8_unicode_ci NOT NULL,
-  `Usuario_admin` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
-  `Clave_admin` varchar(225) COLLATE utf8_unicode_ci NOT NULL
+  `Nombre_admin` varchar(80) NOT NULL,
+  `Usuario_admin` varchar(10) NOT NULL,
+  `Clave_admin` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -77,7 +79,8 @@ CREATE TABLE `loginadmin` (
 --
 
 INSERT INTO `loginadmin` (`ID_admin`, `Nombre_admin`, `Usuario_admin`, `Clave_admin`) VALUES
-(11, 'PIA', '11', '$2y$10$VG9vJRzvzlrqFHE5y2BaxOAaJ5to9f5HxONMQ92lOlPVTMeL2W/X2');
+(11, 'PIA', '11', '$2y$10$FpD2BOrf5B.pMPDoD5gi9ec6ivSmPom7qygQ87vRvud5IJipyB7tG'),
+(13, 'Dora', '11', '$2y$10$SnqdgM0/WDs/Tr64wWvfpu.i0VcOBJjnjLS18NCrbYP5SIYiH2Pmi');
 
 -- --------------------------------------------------------
 
@@ -87,9 +90,9 @@ INSERT INTO `loginadmin` (`ID_admin`, `Nombre_admin`, `Usuario_admin`, `Clave_ad
 
 CREATE TABLE `loginoperador` (
   `ID_operador` int(11) NOT NULL,
-  `Nombre_operador` char(80) COLLATE utf8_unicode_ci NOT NULL,
+  `Nombre_operador` char(80) NOT NULL,
   `Usuario_operador` int(10) NOT NULL,
-  `Clave_operador` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `Clave_operador` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -97,7 +100,10 @@ CREATE TABLE `loginoperador` (
 --
 
 INSERT INTO `loginoperador` (`ID_operador`, `Nombre_operador`, `Usuario_operador`, `Clave_operador`) VALUES
-(11, 'PIA', 11, '$2y$10$th8gu.KeqDSWf69v/qrz0ut4dXP46dd69AdPEKQnaXTmPNU6V.YkK');
+(11, 'PIA', 100, '$2y$10$NEr3XI5qVYKZb26jJz5XnOh4LzI2I7ZBIP2qXow/sW8sjNynWFmTy'),
+(433438, 'r', 39, '$2y$10$thXpY3ERAlpR./jSGnbHoO8iukd3xFUnIJzRtF0Sw7JY60uA7hPcq'),
+(433439, 'wawa', 11, '$2y$10$WHwS6sY2x0qhSzV.f2gFnO9QOTn/yOWgbcotPRn9M84/iqOAsfzhe'),
+(433440, 'Diego', 99, '$2y$10$cz42oXGElrJLIvkTCyJN3OLG7LKsvLHL8IcsioxFieXgn42BrDOh.');
 
 --
 -- Índices para tablas volcadas
@@ -129,19 +135,19 @@ ALTER TABLE `loginoperador`
 -- AUTO_INCREMENT de la tabla `ds`
 --
 ALTER TABLE `ds`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1000000;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `loginadmin`
 --
 ALTER TABLE `loginadmin`
-  MODIFY `ID_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ID_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `loginoperador`
 --
 ALTER TABLE `loginoperador`
-  MODIFY `ID_operador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=433436;
+  MODIFY `ID_operador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=433441;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
